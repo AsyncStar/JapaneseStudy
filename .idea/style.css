@@ -1,0 +1,62 @@
+.title {
+    font-family: Noto Sans JP;
+    text-align: center;
+}
+
+body {
+    font-family: Kimi Maru, sans-serif;
+
+}
+
+details[open]::details-content {
+    padding: 0.5em;
+}
+
+details {
+    display: inline-block;
+    padding: 0.5em;
+}
+
+.summary {
+    text-size: 14px;
+}
+.word {
+    color: orange;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    border: 1px solid orange;
+
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.word-info {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.45);
+    text-align: center;
+    padding: 0.2em;
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+.word-info:hover .tooltip {
+    visibility: visible;
+}
+.dropdown-container {
+    padding: 0.5em;
+}
+
+.wordbank {
+    /*display: grid;*/
+    grid-template-columns: 1fr 1fr;
+    border-radius: 0.25em;
+    border: 1px solid deepskyblue;
+    gap: 0.5em;
+    margin: 1em;
+}
