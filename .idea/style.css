@@ -43,6 +43,7 @@ details {
     position: absolute;
     color: black;
     background-color: rgba(0, 0, 0, 0.18);
+    z-index: 1
 }
 
 .word-info:hover .tooltip {
