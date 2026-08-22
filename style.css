@@ -72,3 +72,22 @@ details {
     margin: 1em;
     display: flex;
 }
+
+.optional {
+    color: yellow;
+}
+
+.grammar {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+}
+
+.expression-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.covered-kanji {
+    color: darkgreen;
+}
