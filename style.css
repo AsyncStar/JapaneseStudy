@@ -1,5 +1,5 @@
 .title {
-    font-family: Noto Sans JP;
+    font-family: Noto Sans JP, sans-serif;
     text-align: center;
 }
 
@@ -17,9 +17,6 @@ details {
     padding: 0.5em;
 }
 
-.summary {
-    text-size: 14px;
-}
 .word {
     color: orange;
     padding: 0.5em;
@@ -32,18 +29,21 @@ details {
 }
 
 .word-info {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.45);
+    color: black;
     text-align: center;
     padding: 0.2em;
+    position: relative;
 }
 
 .tooltip {
     visibility: hidden;
     position: absolute;
     color: black;
+    min-width: 130px;
+    max-width: 300px;
     background-color: rgba(0, 0, 0, 0.18);
-    z-index: 1
+    z-index: 1;
+    top: -60%;
 }
 
 .word-info:hover .tooltip {
@@ -66,4 +66,9 @@ details {
     border: 1px solid black;
     padding: 0.5em;
     margin: 0.5em;
+}
+
+.grammar-note{
+    margin: 1em;
+    display: flex;
 }
