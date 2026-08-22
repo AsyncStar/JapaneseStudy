@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Genki I Notes</title>
     <link rel="stylesheet" href="wip.css">
-    <script src="wip.js" defer></script>
+    <script src="wip.js" type="module"></script> <!-- when importing u need to use module-->
 </head>
 <body>
 
+        <div class="wrapper notes">
+                <h3>Grammar Notes</h3>
+                <div class="box">
+                <ul class="tabs">
+                    <li class="tab"><a href="#SentencePatterns">Sentence / Expression Patterns</a></li>
+                    <li class="tab"><a href="#OtherNotes">Other Notes</a></li>
+                </ul>
+                    <div class="tabContent">
+                        <div id="SentencePatterns" class="tab-pane active"></div>
+                        <div id="OtherNotes" class="tab-pane"></div>
+                    </div>
+
+                </div>
+        </div>
+
+
+
+
 <div class="wrapper verbs">
+    <h2>Verbs</h2>
     <ul class="tabs">
         <li class="tab"><a href="#Function">Function</a></li>
         <li class="tab"><a href="#Communication">Communication</a></li>
@@ -29,11 +48,12 @@
         <div id="Learning" class="tab-pane"><p>Test 5</p></div>
         <div id="FeelingsVerb" class="tab-pane"><p>Test 6</p></div>
         <div id="OtherCommonActions" class="tab-pane"><p>Test 7</p></div>
-        <div id="ObjectInteraction" class="tab-pane"><p>Test 8</p> </div>
+        <div id="ObjectInteraction" class="tab-pane"><p>Test 8</p></div>
     </div>
 </div>
 
 <div class="wrapper adjectives">
+    <h2>Adjectives</h2>
     <ul class="tabs">
         <li class="tab"><a href="#HighFreq">High Frequency</a></li>
         <li class="tab"><a href="#FeelingsAdj">Feelings</a></li>
@@ -50,6 +70,7 @@
 </div>
 
 <div class="wrapper nouns">
+    <h2>Nouns</h2>
     <ul class="tabs">
         <li class="tab"><a href="#People">People</a></li>
         <li class="tab"><a href="#CommonPlaces">Common places</a></li>
@@ -82,5 +103,7 @@
     </div>
 </div>
 
+<span class="hover">Test <span class="tooltip">123</span></span>
+<span class="hover">Test 2 <span class="tooltip">123</span></span>
 </body>
 </html>

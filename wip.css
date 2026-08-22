@@ -22,8 +22,7 @@ ul {
             transition: all .3s ease-in-out;
             border-bottom: 1px solid transparent;
             &:hover {
-                color: gray;
-            }
+                color: gray;            }
         }
     }
 }
@@ -50,4 +49,33 @@ ul {
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+.hover {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0.3em;
+    border: 1px solid darkgray;
+}
+
+.tooltip {
+    background-color: rgba(0, 0, 0, 0.51);
+    color: white;
+    visibility: hidden;
+    position: absolute;
+    bottom: 105%;
+    width: max-content;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0.3em;
+}
+
+.hover:hover .tooltip {
+    visibility: visible;
+}
+
+.box1 {
+    display: grid;
 }
