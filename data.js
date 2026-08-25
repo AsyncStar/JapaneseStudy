@@ -17,7 +17,6 @@ export const structureEnding = [
     { front: "そして", meaning: "", guide: "" },
     { front: "それに", meaning: "", guide: "" },
 
-
     { front: "んです", meaning: "Explanation", guide: "" },
     { front: "でしょう（か）", meaning: "Probably / guessing", guide: "" },
     { front: "ましょう（か）", meaning: "Let's... / Let me do...", guide: "" },
@@ -36,7 +35,6 @@ export const structureEnding = [
     { front: "てだった", meaning: "Have not... yet", guide: "" },
 ]
 
-
 export const sentencePatterns = [
     { front: "Where things are", back: "Xは(location word)のです" },
     { front: "Describing appearance", back: "Aさんは(body part)が(adjective)" },
@@ -54,7 +52,6 @@ export const grammarNotes = [
     { front: "Adjective verb modification", back: "(Adverbial adjective) (verb)"}
 ]
 
-
 export const aSoKoSeries = [
     { front: "これ", back: ""},   { front: "それ", back: ""},   { front: "あれ", back: ""},
     { front: "この", back: ""},   { front: "その", back: ""},   { front: "あの", back: ""},
@@ -62,13 +59,39 @@ export const aSoKoSeries = [
 ]
 
 export const questionWords = [
-    { front: "何", reading: "なに", back: ""},   { front: "どんた", back: ""},   { front: "", back: ""},
-    { front: "どこ", back: ""},   { front: "どれ・どっち・どちら", back: ""},   { front: "", back: ""},
-    { front: "", back: ""},   { front: "", back: ""},   { front: "", back: ""},
-    { front: "", back: ""},   { front: "", back: ""},   { front: "", back: ""},
-    { front: "", back: ""},   { front: "", back: ""},   { front: "", back: ""},
-    { front: "", back: ""},   { front: "", back: ""},   { front: "", back: ""},
+    { front: "何", reading: "なに・なん", back: "なん - Before a counter or です ・　なに before a particle" , lesson: "1"},
+    { front: "いくら", back: "How much?" , lesson: "2"},   { front: "どうですか", back: "How about?" , lesson: "10"},   { front: "どうして", back: "Why?", lesson: "4"},
+    { front: "どんな", back: "What kind of?" , lesson: "5"},   { front: "ほんどうですか", back: "Really?", lesson: "6" },   { front: "どう", back: "How" , lesson: "8" },
+    { front: "どっち・どちら", back: "Which" , lesson: "10"},   { front: "どうやって", back: "How; by what means", lesson: "10"},
+    { front: "どのくらい", back: "How much; how long" , lesson: "10"}
 ]
+
+export const somethingAnythingSeries = [
+    { front: "何か", reading: "なにか", back: "" , lesson: "10"}, { front: "何も", reading: "なにも", back: "" , edition: "1"},
+    { front: "だれか", reading: "", back: "" , edition: "1"}, { front: "だれも", reading: "", back: "" , edition: "1"},
+    { front: "どこか", reading: "", back: "" , edition: "1"}, { front: "どこも", reading: "", back: "" , lesson: "10"},
+    { front: "どこかに", reading: "", back: "" , lesson: "10"}, { front: "どこかへ", reading: "", back: "" , lesson: "10"},
+    { front: "どこへも", reading: "", back: "" , lesson: "10"}, { front: "", reading: "", back: "" , lesson: "10"},
+    { front: "", reading: "", back: "" , lesson: "10"}, { front: "", reading: "", back: "" , lesson: "10"} ,
+    { front: "", reading: "", back: "" , lesson: "10"}, { front: "", reading: "", back: "" , lesson: "10"},
+]
+
+export const locationWords = [
+    { front: "右", reading: "みぎ", back: "", lesson: "4"}, { front: "左", reading: "ひだり", back: "", lesson: "4"},
+    { front: "前", reading: "まえ",  back: "", lesson: "4",}, { front: "後ろ", reading: "うしろ",  back: "", lesson: "4" },
+    { front: "中", reading: "なか",  back: "", lesson: "4"}, { front: "上", reading: "うえ",  back: "", lesson: "4" },
+    { front: "下", reading: "した",  back: "", lesson: "4"}, { front: "近く", reading: "ちかく",  back: "", lesson: "4" },
+    { front: "となり", reading: "", back: "", lesson: "4"}, { front: "間", reading: "あいだ",  back: "", lesson: "4" },
+    { front: "", reading: "", back: "", lesson: ""}, { front: "", reading: "",  back: "", lesson: "4"},
+]
+
+export const timeCounters = [
+    { front: "月", reading: "がつ", back: "", genki: "1"},
+    { front: "時", reading: "じ", back: "", genki: "1"}, { front: "時間", reading: "じかん", back: "", genki: "1"},
+    { front: "年", reading: "ねん", back: "", genki: "1"}, { front: "年間", reading: "ねんかん", back: "", genki: "1"},
+]
+
+
 // ================ VERB DATA ====================
 export const functionVerbs = [
     { front: "来る", reading: "くる", back: "To come"}, { front: "する", reading: "", back: "To do"},
@@ -134,7 +157,6 @@ export const interactionVerbs = [
     { front: "しめる", reading: "", back: "To close (something)"}, { front: "つける", reading: "", back: "To turn on"},
     { front: "けす", reading: "", back: "To turn off"}, { front: "すてる",reading: "", back: "To throw away"},
 ]
-
 
 export const highFreqAdjectives = [
     { front: "いい",reading: "",back: "Good"}, { front: "わるい", reading: "", back: "Bad"},
