@@ -84,7 +84,7 @@ let structureAny = document.getElementById("structure-any");
 
 hoverForDetails(sentencePatterns, sentencePatternsPane)
 hoverForDetails(grammarNotes, grammarNotesPane)
-hoverForDetails(canBeAnyOrder, structureAny )
+hoverForDetails(canBeAnyOrder, structureAny)
 
 
 function createTile(data, destination) {
