@@ -1,17 +1,45 @@
-export const canBeAnyOrder = [
+
+export const structureAny = [
     { front: "を", back:"Object"},  { front: "が", back:"Subject; emphasis"},
     { front: "で", back:"1) By means of... 2) Direction "},  { front: "に", back:"1) Location 2) Time (can also be here)"},
     { front: "へ", back:"Direction"},  { front: "と", back:"Co-participant"},
     { front: "まで", back:"End-point"},  { front: "から", back:"Origin"},
-    { front: "Adverb", back:""}
+    { front: "Adverb", back:""},
+]
+
+export const structureEnding = [
+    { front: "〜たり、たり", meaning: "I did this and that (examples)" , guide:  "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)" },
+    { front: "て、ます", meaning: "I did this and that (exclusively)", guide: "...(Verbて)、(Verb end)" },
+    { front: "でも", meaning: "Or; But", guide: "Place at beginning of following sentence" },
+    { front: "〜が、", meaning: "", guide: "" },
+    { front: "から・ので", meaning: "", guide: "" },
+    { front: "たから", meaning: "", guide: "" },
+    { front: "そして", meaning: "", guide: "" },
+    { front: "それに", meaning: "", guide: "" },
+
+
+    { front: "んです", meaning: "Explanation", guide: "" },
+    { front: "でしょう（か）", meaning: "Probably / guessing", guide: "" },
+    { front: "ましょう（か）", meaning: "Let's... / Let me do...", guide: "" },
+    { front: "てもいいです（か）", meaning: "You may do / May I?", guide: "" },
+    { front: "てください", meaning: "Please do...", guide: "" },
+    { front: "ないでください", meaning: "Please don't...", guide: "" },
+    { front: "つもりです", meaning: "Intend to do", guide: "" },
+    { front: "つもりでした", meaning: "Intend not to do", guide: "" },
+    { front: "ことがある", meaning: "Did / Happened earlier", guide: "" },
+    { front: "たい", meaning: "Want", guide: "" },
+    { front: "だはうがいいです", meaning: "It's better to do...", guide: "" },
+    { front: "ないはういです", meaning: "It's better not to do...", guide: "" },
+    { front: "なけれはいけません", meaning: "You must", guide: "" },
+    { front: "なきゃけません", meaning: "You must (polite)", guide: "" },
+    { front: "ている", meaning: "(verb) in progress or result of (verb) change", guide: "" },
+    { front: "てだった", meaning: "Have not... yet", guide: "" },
 ]
 
 
 export const sentencePatterns = [
     { front: "Where things are", back: "Xは(location word)のです" },
     { front: "Describing appearance", back: "Aさんは(body part)が(adjective)" },
-    { front: "I did this and that (ordered & exclusive)", back:"...(Verbて)、(Verb end)" },
-    { front: "I did this and that (examples)", back: "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)"},
     { front: "Contrasting like & dislike", back: "(Object)はlike/dislikeが(object)は..."},
     { front: "Neutral (like nor dislike)", back: "好きでもきらいないです"},
     { front: "I like doing... / I'm good at doing...", back: "(Verb short dictionary)のが(好き/上手)です。" },
