@@ -1,9 +1,4 @@
-import { sentencePatterns, grammarNotes, functionVerbs, communicationVerb, movementVerb, dailyRoutineVerbs,
-    learningVerbs, feelingVerb, commonActionVerbs, interactionVerbs,
-    highFreqAdjectives, feelingAdjectives, opinionAdjectives, propertiesAdjectives,
-    livingBeings, commonPlaces, commonObjects, householdFurniture, clothingAccessories,
-    Technology, Weather, Body, Transportation, Abstract, WorkSchool, Activities,
-    canBeAnyOrder} from "./data.js";
+import * as data from "./data.js";
 
 
 function onTabClick(event) {
@@ -81,11 +76,11 @@ function hoverForDetails(data, destination) {
 
 let sentencePatternsPane = document.getElementById("SentencePatterns");
 let grammarNotesPane = document.getElementById("OtherNotes");
-let structureAny = document.getElementById("structure-any");
+let structureAnyPane = document.getElementById("structure-any");
 
-hoverForDetails(sentencePatterns, sentencePatternsPane)
-hoverForDetails(grammarNotes, grammarNotesPane)
-hoverForDetails(canBeAnyOrder, structureAny)
+hoverForDetails(data.sentencePatterns, sentencePatternsPane)
+hoverForDetails(data.grammarNotes, grammarNotesPane)
+hoverForDetails(data.structureAny, structureAnyPane )
 
 
 function createTile(data, destination) {
@@ -118,14 +113,14 @@ let commonActionVerbPane = document.getElementById("OtherCommonActions");
 let interactionVerbPane = document.getElementById("ObjectInteraction");
 
 
-createTile(functionVerbs, functionVerbPane)
-createTile(communicationVerb, communicationVerbPane)
-createTile(movementVerb, movementVerbPane)
-createTile(dailyRoutineVerbs, dailyRoutineVerbPane)
-createTile(learningVerbs, learningVerbPane)
-createTile(feelingVerb, feelingVerbPane)
-createTile(commonActionVerbs, commonActionVerbPane)
-createTile(interactionVerbs, interactionVerbPane)
+createTile(data.functionVerbs, functionVerbPane)
+createTile(data.communicationVerb, communicationVerbPane)
+createTile(data.movementVerb, movementVerbPane)
+createTile(data.dailyRoutineVerbs, dailyRoutineVerbPane)
+createTile(data.learningVerbs, learningVerbPane)
+createTile(data.feelingVerb, feelingVerbPane)
+createTile(data.commonActionVerbs, commonActionVerbPane)
+createTile(data.interactionVerbs, interactionVerbPane)
 
 // adjective verb pane initialization & dom generation
 let highFreqAdjectivesPane = document.getElementById("HighFreq");
@@ -133,10 +128,10 @@ let feelingAdjectivesPane = document.getElementById("FeelingsAdj");
 let propertiesAdjectivesPane = document.getElementById("Properties");
 let opinionAdjectivesPane = document.getElementById("Opinions");
 
-createTile(highFreqAdjectives, highFreqAdjectivesPane)
-createTile(feelingAdjectives, feelingAdjectivesPane)
-createTile(propertiesAdjectives, propertiesAdjectivesPane)
-createTile(opinionAdjectives, opinionAdjectivesPane)
+createTile(data.highFreqAdjectives, highFreqAdjectivesPane)
+createTile(data.feelingAdjectives, feelingAdjectivesPane)
+createTile(data.propertiesAdjectives, propertiesAdjectivesPane)
+createTile(data.opinionAdjectives, opinionAdjectivesPane)
 
 // noun verb pane initialization & dom generation
 let livingBeingPane = document.getElementById("LivingBeings");
@@ -152,26 +147,26 @@ let abstractPane = document.getElementById("Abstract");
 let workSchoolPane = document.getElementById("WorkSchool");
 let activitiesPane = document.getElementById("Activities");
 
-createTile(livingBeings, livingBeingPane)
-createTile(commonPlaces, commonPlacesPane)
-createTile(commonObjects, commonObjectsPane)
-createTile(householdFurniture, householdFurniturePane)
-createTile(clothingAccessories, clothingAccessPane)
-createTile(Technology, technologyPane)
-createTile(Weather, weatherPane)
-createTile(Body, bodyPane)
-createTile(Transportation, transportationPane)
-createTile(Abstract, abstractPane)
-createTile(WorkSchool, workSchoolPane)
-createTile(Activities, activitiesPane)
+createTile(data.livingBeings, livingBeingPane)
+createTile(data.commonPlaces, commonPlacesPane)
+createTile(data.commonObjects, commonObjectsPane)
+createTile(data.householdFurniture, householdFurniturePane)
+createTile(data.clothingAccessories, clothingAccessPane)
+createTile(data.Technology, technologyPane)
+createTile(data.Weather, weatherPane)
+createTile(data.Body, bodyPane)
+createTile(data.Transportation, transportationPane)
+createTile(data.Abstract, abstractPane)
+createTile(data.WorkSchool, workSchoolPane)
+createTile(data.Activities, activitiesPane)
 
 function openModal(event) {
     // get tile data
-   const tile = event.target;
-   const tileBack = tile.dataset.back;
-   const tileReading = tile.dataset.reading;
+    const tile = event.target;
+    const tileBack = tile.dataset.back;
+    const tileReading = tile.dataset.reading;
 
-   // get modal destinations
+    // get modal destinations
     const modal = document.getElementById("vocab-modal");
     const modalClose = document.getElementById("modal-close");
     const modalFront = document.getElementById("modal-front");
