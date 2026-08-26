@@ -1,94 +1,184 @@
-.title {
-    font-family: Noto Sans JP, sans-serif;
-    text-align: center;
-}
+* {
 
+    box-sizing: border-box;
+
+    --jpn-font-family: Zen Kaku Gothic New, sans-serif;
+    --jpn-font-size: 17px;
+
+    --background-color: #f1f1f1;
+}
 body {
-    font-family: Kimi Maru, sans-serif;
-    font-size: 16px;
+    background-color: var(--background-color);
+}
+.jpn {
+    font-family: var(--jpn-font-family), sans-serif;
+    font-size: var(--jpn-font-size);
 
 }
 
-details[open]::details-content {
-    padding: 0.5em;
+.page {
+    display: grid;
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
 }
 
-details {
-    display: inline-block;
-    padding: 0.5em;
+.page-top {
+    display: flex;
+    flex-direction: column;
+
 }
 
-.word {
-    color: orange;
-    padding: 0.5em;
-    border-radius: 0.25em;
-    border: 1px solid orange;
-
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.word-info {
-    color: black;
-    text-align: center;
-    padding: 0.2em;
-    position: relative;
-}
-
-.tooltip {
-    visibility: hidden;
-    position: absolute;
-    color: black;
-    min-width: 130px;
-    max-width: 300px;
-    background-color: rgba(0, 0, 0, 0.18);
-    z-index: 1;
-    top: -60%;
-}
-
-.word-info:hover .tooltip {
-    visibility: visible;
-}
-.dropdown-container {
-    padding: 0.5em;
-}
-
-.box {
-    /*display: grid;*/
-    grid-template-columns: 1fr 1fr;
-    border-radius: 0.25em;
-    border: 1px solid deepskyblue;
-    gap: 0.5em;
-    margin: 1em;
-}
-
-.sentence-cheat {
-    border: 1px solid black;
-    padding: 0.5em;
-    margin: 0.5em;
-}
-
-.grammar-note{
-    margin: 1em;
+.tab-container {
     display: flex;
 }
 
-.optional {
-    color: yellow;
+.vocab-container {
+    width: 400px;
 }
 
-.grammar {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+.destination-container {
+    border: 1px solid black;
+    min-height: 100px;
+    max-width: 100%;
+}
+
+.page-main {
+
+    .tabs {
+        max-width: 400px;
+        max-height: 100px;
+        overflow-x: scroll;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: -2px;
+
+    li {
+        display: inline-flex;
+
+        a {
+            text-decoration: none;
+            color: darkgray;
+            padding: 0.5em;
+            transition: all .3s ease-in-out;
+            border-bottom: 1px solid transparent;
+            &:hover {
+                color: gray;            }
+        }
+    }
+}
+
+.tile {
+    display: inline-block;
+    text-align: center;
+    border: 0.02em solid rgba(156, 156, 156, 0.2);
+    border-radius: 8px;
+    width: max-content;
+    padding: 0.2em;
+    margin: 0.2em;
+
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 
 }
 
-.expression-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.tab.active a {
+    color: slateblue;
+    border-bottom: 1px solid slateblue;
+    &:hover {
+        border-color: transparent;
+        background: slateblue;
+        color: white;
+    }
 }
 
-.covered-kanji {
-    color: darkgreen;
+
+.tab-pane {
+    display: none;
+    animation: fadeEffect 1s;
 }
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.hover {
+    padding: 0.2em;
+    margin: 0.2em;
+}
+
+.hover-active {
+    background-color: rgba(72, 61, 139, 0.36);
+}
+
+dialog {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    width: 100%;
+
+    text-align: center;
+}
+
+#modal-front {
+    font-size: 30px;
+}
+
+
+/* ================== EXPRESSIONS HTML ==================== */
+
+.grammar-container {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    border: 1px solid green;
+
+    .destination-container {
+        width: 60%;
+    }
+
+
+    #hover-details {
+        border: 1px solid black;
+        padding: 0.3em;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+        width: 40%;
+
+    }
+
+    .tabs {
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+
+}
+
+.accordionTitle {
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.accordionTitle + .accordionContent {
+    display: none;
+}
+
+.accordionTitle.is-open + .accordionContent {
+    display: block;
+}
+

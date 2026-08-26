@@ -30,59 +30,6 @@ tabElements.forEach(function(tabElement) {
 
 
 
-function createTooltip(data, destination) {
-
-    data.forEach(function(el) {
-        const front = el.front;
-        const back = el.back;
-        const hover = document.createElement("span");
-        const tooltip = document.createElement("span");
-
-        hover.classList.add('hover');
-        tooltip.classList.add('tooltip');
-        hover.innerHTML = front;
-        tooltip.innerHTML = back;
-
-        hover.appendChild(tooltip);
-        destination.appendChild(hover);
-    })
-
-}
-
-function hoverForDetails(data, destination) {
-
-    data.forEach(function(el) {
-        const front = el.front;
-        const back = el.back;
-
-        const hover = document.createElement("span");
-        const hoverDetails = document.getElementById('hover-details');
-        hover.classList.add('hover');
-        hover.innerHTML = front;
-        destination.appendChild(hover);
-
-        hover.addEventListener("mouseenter", function () {
-            hover.classList.add('hover-active');
-            hoverDetails.textContent = back;
-        })
-
-        hover.addEventListener("mouseleave", function () {
-            hover.classList.remove('hover-active');
-            hoverDetails.textContent = "Hover over tile!"
-        })
-    })
-}
-
-
-let sentencePatternsPane = document.getElementById("SentencePatterns");
-let grammarNotesPane = document.getElementById("OtherNotes");
-let structureAnyPane = document.getElementById("structure-any");
-
-hoverForDetails(data.sentencePatterns, sentencePatternsPane)
-hoverForDetails(data.grammarNotes, grammarNotesPane)
-hoverForDetails(data.structureAny, structureAnyPane )
-
-
 function createTile(data, destination) {
     data.forEach(function(el) {
         const front = el.front;
