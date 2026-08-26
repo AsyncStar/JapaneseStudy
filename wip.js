@@ -34,6 +34,7 @@ tabElements.forEach(function(tabElement) {
 });
 
 
+
 function createTooltip(data, destination) {
 
     data.forEach(function(el) {
@@ -97,6 +98,7 @@ function createTile(data, destination) {
         tileFront.dataset.back = back;
         tileFront.dataset.reading = reading;
         tileFront.classList.add('tile');
+        tileFront.classList.add('jpn');
 
         tileFront.innerHTML = front;
 
@@ -175,6 +177,8 @@ function openModal(event) {
     const modalFront = document.getElementById("modal-front");
     const modalReading = document.getElementById("modal-reading");
     const modalReveal  = document.getElementById("modal-reveal");
+
+    modal.classList.add("jpn");
 
     modalFront.textContent = tile.textContent;
     modalReading.innerHTML = tileReading;
