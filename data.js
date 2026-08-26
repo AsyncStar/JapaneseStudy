@@ -11,7 +11,7 @@ export const structureEnding = [
     { front: "〜たり、たり", meaning: "I did this and that (examples)" , guide:  "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)" },
     { front: "て、ます", meaning: "I did this and that (exclusively)", guide: "...(Verbて)、(Verb end)" },
     { front: "でも", meaning: "Or; But", guide: "Place at beginning of following sentence" },
-    { front: "〜が、", meaning: "", guide: "" },
+    { front: "〜が、", meaning: "But", guide: "" },
     { front: "から・ので", meaning: "", guide: "" },
     { front: "たから", meaning: "", guide: "" },
     { front: "そして", meaning: "", guide: "" },
