@@ -1,13 +1,17 @@
 
 export const structureAny = [
-    { front: "を", back:"Object"},  { front: "が", back:"Subject; emphasis"},
+    { front: "を", back:"Object "},  { front: "が", back:"Subject; emphasis"},
     { front: "で", back:"1) By means of... 2) Direction "},  { front: "に", back:"1) Location 2) Time (can also be here)"},
     { front: "へ", back:"Direction"},  { front: "と", back:"Co-participant"},
     { front: "まで", back:"End-point"},  { front: "から", back:"Origin"},
-    { front: "Adverb", back:""},
+
 ]
 
-export const structureEnding = [
+export const structureSentence = [
+    {front: "Time", back: "If including specific points in such as clock times, days of week, specific dates/years, start the sentence with (time) に."},
+    {front: "Verb or copula", back:"End the sentence with a verb or copula. If it's a verb, everything that applies to that verb must come before it."},
+]
+export const structureConnector = [
     { front: "〜たり、たり", meaning: "I did this and that (examples)" , guide:  "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)" },
     { front: "て、ます", meaning: "I did this and that (exclusively)", guide: "...(Verbて)、(Verb end)" },
     { front: "でも", meaning: "Or; But", guide: "Place at beginning of following sentence" },
@@ -16,7 +20,9 @@ export const structureEnding = [
     { front: "たから", meaning: "", guide: "" },
     { front: "そして", meaning: "", guide: "" },
     { front: "それに", meaning: "", guide: "" },
+]
 
+export const structureEnding = [
     { front: "んです", meaning: "Explanation", guide: "" },
     { front: "でしょう（か）", meaning: "Probably / guessing", guide: "" },
     { front: "ましょう（か）", meaning: "Let's... / Let me do...", guide: "" },
@@ -42,15 +48,12 @@ export const sentencePatterns = [
     { front: "Neutral (like nor dislike)", back: "好きでもきらいないです"},
     { front: "I like doing... / I'm good at doing...", back: "(Verb short dictionary)のが(好き/上手)です。" },
     { front: "Counting people", back: "PlaceにはがX人(じん)います。"},
-    { front: "To become...", back: "(Adverbial adjective)/(noun)なる"}
-]
-
-export const grammarNotes = [
-    { front: "Counting", back: "(Item) (Number)(Counter)"},
+    { front: "To become...", back: "(Adverbial adjective)/(noun)なる"}, { front: "Counting", back: "(Item) (Number)(Counter)"},
     { front: "Adjective adverbial form", back: "な-adj replace　な with に |い-adj swap い with く"},
     { front: "Adjective noun modification", back: "(な-adj keep な) (noun) |(い-adj dictionary) (noun)"},
     { front: "Adjective verb modification", back: "(Adverbial adjective) (verb)"}
 ]
+
 
 export const aSoKoSeries = [
     { front: "これ", back: ""},   { front: "それ", back: ""},   { front: "あれ", back: ""},

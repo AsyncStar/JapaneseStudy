@@ -3,50 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Genki I Notes</title>
-    <link rel="stylesheet" href="wip.css">
+    <title>Genki I | Common Words</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=M+PLUS+1:wght@100..900&display=swap"
-          rel="stylesheet">
-    <script src="wip.js" type="module"></script> <!-- when importing u need to use module-->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <script src="commonWords.js" type="module"></script>
 </head>
 <body>
+
+<div><a href="index.html">Index</a></div>
+<div><a href="commonWords.html">Common vocabulary</a></div>
+<div><a href="grammar.html">Grammar</a></div>
+
+
 <div class="page">
 
-    <div class="page-top">
-        <div id="hover-details">Hover over blue tile</div>
-        <div id="conjugation-search">
-
-        </div>
-    </div>
-
-
-    <div class="page-bottom">
-        <div class="set-wrapper">
-            <div class="side-bar">
-                <ul class="tabs">
-                    <li class="tab"><a href="#structure-time"><em>Timeに</em></a></li>
-                    <li class="tab"><a href="#structure-topic">Topic</a></li>
-                    <li class="tab"><a href="#structure-any">Any order</a></li>
-                    <li class="tab"><a href="#structure-ending">Verb / Ending / Connectors</a></li>
-                </ul>
-
-            </div>
-            <div class="destinations">
-                <div class="tab-content">
-                    <div id="structure-time" class="tab-pane"></div>
-                    <div id="structure-topic" class="tab-pane"></div>
-                    <div id="structure-any" class="tab-pane"></div>
-                    <div id="structure-ending" class="tab-pane"></div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="set-wrapper">
-            <div class="side-bar">
+    <div class="page-main">
+        <div class="vocab-container">
+            <div class="common-vocab">
                 <ul class="tabs">
                     <li class="tab"><a href="#Function">Function</a></li>
                     <li class="tab"><a href="#Communication">Communication</a></li>
@@ -59,7 +34,7 @@
                 </ul>
 
             </div>
-            <div class="destinations">
+            <div class="destination-container">
                 <div class="tabContent">
                     <div id="Function" class="tab-pane"></div>
                     <div id="Communication" class="tab-pane "></div>
@@ -74,8 +49,8 @@
             </div>
         </div>
 
-        <div class="set-wrapper">
-            <div class="side-bar">
+        <div class="vocab-container">
+            <div class="common-vocab">
                 <ul class="tabs">
                     <li class="tab"><a href="#LivingBeings">People</a></li>
                     <li class="tab"><a href="#CommonPlaces">Common places</a></li>
@@ -92,7 +67,7 @@
                 </ul>
 
             </div>
-            <div class="destinations">
+            <div class="destination-container">
                 <div class="tabContent">
                     <div id="LivingBeings" class="tab-pane"></div>
                     <div id="CommonPlaces" class="tab-pane"></div>
@@ -111,8 +86,8 @@
             </div>
         </div>
 
-        <div class="set-wrapper">
-            <div class="side-bar">
+        <div class="vocab-container">
+            <div class="common-vocab">
                 <ul class="tabs">
                     <li class="tab"><a href="#HighFreq">High Frequency</a></li>
                     <li class="tab"><a href="#FeelingsAdj">Feelings</a></li>
@@ -121,7 +96,7 @@
                 </ul>
 
             </div>
-            <div class="destinations">
+            <div class="destination-container">
 
                 <div class="tabContent">
                     <div id="HighFreq" class="tab-pane"></div>
@@ -132,24 +107,14 @@
             </div>
         </div>
 
-        <div class="set-wrapper">
-            <div class="side-bar">
-                <ul class="tabs">
-                    <li class="tab"><a href="#SentencePatterns">Sentence / Expression Patterns</a></li>
-                    <li class="tab"><a href="#OtherNotes">Other Notes</a></li>
-                </ul>
-            </div>
-            <div class="destinations">
-                <div class="tabContent">
-                    <div id="SentencePatterns" class="tab-pane"></div>
-                    <div id="OtherNotes" class="tab-pane"></div>
-                </div>
-            </div>
         </div>
+
+
+
 
     </div>
 
-</div>
+
 
 
 <dialog id="vocab-modal">
