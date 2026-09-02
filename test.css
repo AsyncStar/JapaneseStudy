@@ -1,0 +1,102 @@
+* {
+
+    box-sizing: border-box;
+
+    --main-font-family: Zen Kaku Gothic New, sans-serif;
+    --jpn-font-size: 17px;
+}
+
+
+.dashed-border {
+    border: 1px dashed darkgray;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: var(--main-font-family), sans-serif;
+}
+
+#conjugator-container {
+    display: flex;
+    gap: 1rem;
+
+    font-size: 0.7em;
+
+    .conjugator-selectors {
+        display: flex;
+        flex-direction: row;
+        gap: 1.2em;
+        font-size: 0.4em;
+    }
+
+    .stack {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kana-selectors {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
+.accordion {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.9em;
+    margin: 0.2em 0.3em;
+    padding: 0.2em;
+    font-size: 0.7em;
+    max-height: max-content;
+   /* border: 1px solid hotpink; */
+}
+
+
+.accordion__outer-tabs {
+    gap: 0;
+    flex: 1;
+
+    .tabs {
+        min-width: 150px;
+    }
+}
+
+.accordion__content {
+    flex: 4;
+    max-height: 20%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-grid;
+
+    li {
+        display: inline-block;
+        border: 1px solid darkgray;
+        &:hover {
+            background-color: #dadada;
+        }
+
+        a {
+            text-decoration: none;
+            color: darkgray;
+            padding: 0.2em;
+            transition: all .3s ease-in-out;
+            border-bottom: 1px solid transparent;
+            &:hover {
+                color: gray;            }
+        }
+    }
+}
