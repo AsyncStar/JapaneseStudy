@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <script src="test.js" type="module"></script>
+</head>
+<body>
+<div class="nav-bar">
+    <div id="conjugator-container">
+        <div class="conjugator-selectors">
+            <div class="type-selectors stack">
+                <input type="radio" id="standard" name="type" value="standard" checked> <label for="standard">Standard</label>
+                <input type="radio" id="teForm" name="type" value="=teForm"> <label for="teForm">Te-Form</label>
+            </div>
+            <div class="form-selectors stack">
+                <input type="radio" id="polite" name="form" value="polite" checked> <label for="polite">Polite</label>
+                <input type="radio" id="short" name="form" value="short"> <label for="short">Short</label>
+            </div>
+            <div class="tense-selectors stack">
+                <input type="radio" id="present" name="tense" value="present" checked> <label for="present">Present</label>
+                <input type="radio" id="past" name="tense" value="past"> <label for="past">Past</label>
+            </div>
+            <div class="polarity-selectors stack">
+                <input type="radio" id="affirmative" name="polarity" value="affirmative" checked> <label for="affirmative">Affirmative</label>
+                <input type="radio" id="negative" name="polarity" value="negative"> <label for="negative">Negative</label>
+            </div>
+            <div class="kana-selectors">
+                <div><input type="radio" id="ru-verb" name="kana" value="る" checked> <label for="ru-verb" class="">る</label></div>
+                <div><input type="radio" id="mu-verb" name="kana" value="む"> <label for="mu-verb" class="">む</label></div>
+                <div><input type="radio" id="ku-verb" name="kana" value="く"> <label for="ku-verb" class="">く</label></div>
+                <div><input type="radio" id="gu-verb" name="kana" value="ぐ"> <label for="gu-verb" class="">ぐ</label></div>
+                <div><input type="radio" id="bu-verb" name="kana" value="ぶ"> <label for="bu-verb" class="">ぶ</label></div>
+                <div><input type="radio" id="nu-verb" name="kana" value="ぬ"> <label for="nu-verb" class="">ぬ</label></div>
+                <div><input type="radio" id="u-verb" name="kana" value="う"> <label for="u-verb" class="">う</label></div>
+                <div> <input type="radio" id="tsu-verb" name="kana" value="つ"> <label for="tsu-verb" class="">つ</label></div>
+            </div>
+
+
+        </div>
+        <div id="conjugation-result" class="dashed-border"></div>
+    </div>
+
+</div>
+<div class="page">
+    <div class="accordion dashed-border">
+
+        <div class="accordion__outer-tabs">
+            <ul class="tabs">
+                <li class="tab" data-group="grammar"><a href="#sentence-ending">Sentence Endings</a></li>
+                <li class="tab" data-group="grammar"><a href="#sentence-connector">Sentence Connectors</a></li>
+                <li class="tab" data-group="grammar"><a href="#question-words">Question Words</a></li>
+                <li class="tab" data-group="grammar"><a href="#a-so-ko">あそこ</a></li>
+
+                <li class="tab" data-group="verbs"><a href="#Function">Function</a></li>
+                <li class="tab" data-group="verbs"><a href="#Communication">Communication</a></li>
+                <li class="tab" data-group="verbs" ><a href="#Movement">Movement</a></li>
+                <li class="tab" data-group="verbs"><a href="#DailyRoutine">Daily Routine</a></li>
+            </ul>
+
+        </div>
+
+        <div class="accordion__content flex-col">
+            <div class="accordion__inner-tabs">
+                <ul class="tabs flex-row grammar">
+                    <li class="tab"><a href="#something-anything">Something / anything</a></li>
+                    <li class="tab"><a href="#location-words">Location words</a></li>
+                    <li class="tab"><a href="#sentence-patterns">Sentence / Expression Patterns</a></li>
+                </ul>
+            </div>
+
+            <div class="accordion__panes grammar">
+                <div id="sentence-connector" class="tab-pane">phh</div>
+                <div id="sentence-ending" class="tab-pane">p2</div>
+                <div id="sentence-patterns" class="tab-pane">p3</div>
+                <div id="sentence-structure">p4</div>
+                <div id="question-words" class="tab-pane">p5</div>
+                <div id="a-so-ko" class="tab-pane">p6</div>
+                <div id="something-anything" class="tab-pane">p7</div>
+                <div id="location-words" class="tab-pane">p8</div>
+            </div>
+
+            <div class="accordion__panes verbs">
+                <div id="Function" class="tab-pane"></div>
+                <div id="Communication" class="tab-pane "></div>
+                <div id="Movement" class="tab-pane"></div>
+                <div id="DailyRoutine" class="tab-pane"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

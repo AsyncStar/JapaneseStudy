@@ -7,38 +7,35 @@ export const structureAny = [
 
 ]
 
-export const structureSentence = [
-    {front: "Time", back: "If including specific points in such as clock times, days of week, specific dates/years, start the sentence with (time) に."},
-    {front: "Verb or copula", back:"End the sentence with a verb or copula. If it's a verb, everything that applies to that verb must come before it."},
-]
 export const structureConnector = [
-    { front: "〜たり、たり", meaning: "I did this and that (examples)" , guide:  "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)" },
-    { front: "て、ます", meaning: "I did this and that (exclusively)", guide: "...(Verbて)、(Verb end)" },
-    { front: "でも", meaning: "Or; But", guide: "Place at beginning of following sentence" },
-    { front: "〜が、", meaning: "But", guide: "" },
-    { front: "から・ので", meaning: "", guide: "" },
-    { front: "たから", meaning: "", guide: "" },
-    { front: "そして", meaning: "", guide: "" },
-    { front: "それに", meaning: "", guide: "" },
+    { front: "〜たり、たり", back: "I did this and that (examples)" , guide:  "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)" },
+    { front: "て、ます", back: "I did this and that (exclusively)", guide: "...(Verbて)、(Verb end)" },
+    { front: "でも", back: "Or; But", guide: "Place at beginning of following sentence" },
+    { front: "〜が、", back: "But", guide: "" },
+    { front: "から・ので", back: "", guide: "" },
+    { front: "たから", back: "", guide: "" },
+    { front: "そして", back: "", guide: "" },
+    { front: "それに", back: "", guide: "" },
 ]
 
 export const structureEnding = [
-    { front: "んです", meaning: "Explanation", guide: "" },
-    { front: "でしょう（か）", meaning: "Probably / guessing", guide: "" },
-    { front: "ましょう（か）", meaning: "Let's... / Let me do...", guide: "" },
-    { front: "てもいいです（か）", meaning: "You may do / May I?", guide: "" },
-    { front: "てください", meaning: "Please do...", guide: "" },
-    { front: "ないでください", meaning: "Please don't...", guide: "" },
-    { front: "つもりです", meaning: "Intend to do", guide: "" },
-    { front: "つもりでした", meaning: "Intend not to do", guide: "" },
-    { front: "ことがある", meaning: "Did / Happened earlier", guide: "" },
-    { front: "たい", meaning: "Want", guide: "" },
-    { front: "だはうがいいです", meaning: "It's better to do...", guide: "" },
-    { front: "ないはういです", meaning: "It's better not to do...", guide: "" },
-    { front: "なけれはいけません", meaning: "You must", guide: "" },
-    { front: "なきゃけません", meaning: "You must (polite)", guide: "" },
-    { front: "ている", meaning: "(verb) in progress or result of (verb) change", guide: "" },
-    { front: "てだった", meaning: "Have not... yet", guide: "" },
+    { front: "んです", back: "Explanation", guide: "" },
+    { front: "でしょう（か）", back: "Probably / guessing", guide: "" },
+    { front: "ましょう（か）", back: "Let's... / Let me do...", guide: "" },
+    { front: "てもいいです（か）", back: "You may do / May I?", guide: "" },
+    { front: "てください", back: "Please do...", guide: "" },
+    { front: "ないでください", back: "Please don't...", guide: "" },
+    { front: "つもりです", back: "Intend to do", guide: "" },
+    { front: "つもりでした", back: "Intend not to do", guide: "" },
+    { front: "ことがある", back: "Did / Happened earlier", guide: "" },
+    { front: "たい", back: "Want", guide: "" },
+    { front: "すぎる", back: "Too much/excess", guide: "(adj stem/verb masu stem) すぎる" },
+    { front: "だはうがいいです", back: "It's better to do...", guide: "" },
+    { front: "ないはういです", back: "It's better not to do...", guide: "" },
+    { front: "なけれはいけません", back: "You must", guide: "" },
+    { front: "なきゃけません", back: "You must (polite)", guide: "" },
+    { front: "ている", back: "(verb) in progress or result of (verb) change", guide: "" },
+    { front: "てだった", back: "Have not... yet", guide: "" },
 ]
 
 export const sentencePatterns = [
@@ -70,21 +67,19 @@ export const questionWords = [
 ]
 
 export const somethingAnythingSeries = [
-    { front: "何か", reading: "なにか", back: "" , lesson: "10"}, { front: "何も", reading: "なにも", back: "" , edition: "1"},
-    { front: "だれか", reading: "", back: "" , edition: "1"}, { front: "だれも", reading: "", back: "" , edition: "1"},
-    { front: "どこか", reading: "", back: "" , edition: "1"}, { front: "どこも", reading: "", back: "" , lesson: "10"},
-    { front: "どこかに", reading: "", back: "" , lesson: "10"}, { front: "どこかへ", reading: "", back: "" , lesson: "10"},
-    { front: "どこへも", reading: "", back: "" , lesson: "10"}, { front: "", reading: "", back: "" , lesson: "10"},
-    { front: "", reading: "", back: "" , lesson: "10"}, { front: "", reading: "", back: "" , lesson: "10"} ,
-    { front: "", reading: "", back: "" , lesson: "10"}, { front: "", reading: "", back: "" , lesson: "10"},
+    { front: "何か", reading: "なにか", back: "Something" , lesson: "10"}, { front: "何も", reading: "なにも", back: "Not anything" , edition: "1"},
+    { front: "だれか", reading: "", back: "Someone" , edition: "1"}, { front: "だれも", reading: "", back: "Not anyone" , edition: "1"},
+    { front: "どこか", reading: "", back: "Somewhere" , edition: "1"}, { front: "どこも", reading: "", back: "Not anywhere" , lesson: "10"},
+    { front: "どこかに", reading: "", back: "To somewhere" , lesson: "10"}, { front: "どこかへ", reading: "", back: "To somewhere" , lesson: "10"},
+    { front: "どこへも", reading: "", back: "Not anywhere" , lesson: "10"}
 ]
 
 export const locationWords = [
-    { front: "右", reading: "みぎ", back: "", lesson: "4"}, { front: "左", reading: "ひだり", back: "", lesson: "4"},
-    { front: "前", reading: "まえ",  back: "", lesson: "4",}, { front: "後ろ", reading: "うしろ",  back: "", lesson: "4" },
-    { front: "中", reading: "なか",  back: "", lesson: "4"}, { front: "上", reading: "うえ",  back: "", lesson: "4" },
-    { front: "下", reading: "した",  back: "", lesson: "4"}, { front: "近く", reading: "ちかく",  back: "", lesson: "4" },
-    { front: "となり", reading: "", back: "", lesson: "4"}, { front: "間", reading: "あいだ",  back: "", lesson: "4" },
+    { front: "右", reading: "みぎ", back: "right (〜の)", lesson: "4"}, { front: "左", reading: "ひだり", back: "left (〜の)", lesson: "4"},
+    { front: "前", reading: "まえ",  back: "front (〜の)", lesson: "4",}, { front: "後ろ", reading: "うしろ",  back: "back; behind (〜の)", lesson: "4" },
+    { front: "中", reading: "なか",  back: "inside (〜の)", lesson: "4"}, { front: "上", reading: "うえ",  back: "on (〜の)", lesson: "4" },
+    { front: "下", reading: "した",  back: "under (〜の)", lesson: "4"}, { front: "近く", reading: "ちかく",  back: "near; nearby (〜の)", lesson: "4" },
+    { front: "となり", reading: "next (〜の)", back: "", lesson: "4"}, { front: "間", reading: "あいだ",  back: "between (A と B の) ", lesson: "4" },
     { front: "", reading: "", back: "", lesson: ""}, { front: "", reading: "",  back: "", lesson: "4"},
 ]
 
@@ -93,6 +88,17 @@ export const timeCounters = [
     { front: "時", reading: "じ", back: "", genki: "1"}, { front: "時間", reading: "じかん", back: "", genki: "1"},
     { front: "年", reading: "ねん", back: "", genki: "1"}, { front: "年間", reading: "ねんかん", back: "", genki: "1"},
 ]
+
+
+export const time = [
+    { front: "日曜日", reading: "にちようび", back: "", genki: "1"},  { front: "月曜日", reading: "げつようび", back: "", genki: "1"},
+    { front: "毎日", reading: "まいにち", back: "", genki: "1"},  { front: "今", reading: "いま", back: "", genki: "1"},
+    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
+    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
+    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
+    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
+]
+
 
 
 // ================ VERB DATA ====================
@@ -161,6 +167,8 @@ export const interactionVerbs = [
     { front: "けす", reading: "", back: "To turn off"}, { front: "すてる",reading: "", back: "To throw away"},
 ]
 
+// ================= ADJECTIVES =================
+
 export const highFreqAdjectives = [
     { front: "いい",reading: "",back: "Good"}, { front: "わるい", reading: "", back: "Bad"},
     { front: "かんたんな",reading: "",back: "Easy; simple"}, { front: "むずかしい", reading: "", back: "Difficult"},
@@ -182,7 +190,7 @@ export const propertiesAdjectives = [
     { front: "あつい",reading: "",back: "Hot (weather; thing)"}, { front: "さむい", reading: "", back: "Cold (weather)"},
     { front: "すずしい",reading: "",back: "Cool (weather)"}, { front: "あたたかしい", reading: "もつ", back: "Warm"},
     { front: "つめたい",reading: "",back: "Cold (things; personality)"}, { front: "あたらし", reading: "", back: "New"},
-    { front: "ふるい",reading: "",back: "Old (thing)"}, { front: "大", reading: "おおきい", back: "Large"},
+    { front: "古い",reading: "ふるい",back: "Old (thing)"}, { front: "大", reading: "おおきい", back: "Large"},
     { front: "小さい",reading: "ちいさい",back: "Small"}, { front: "せまい", reading: "", back: "Narrow; not spacious"},
     { front: "ひろい",reading: "",back: "Wide; spacious"}, { front: "やすい", reading: "", back: "Inexpensive; cheap (thing)"},
     { front: "高い",reading: "たかい",back: "Expensive; high"}, { front: "いそがしい", reading: "", back: "Busy (people/day)"},
@@ -196,6 +204,10 @@ export const opinionAdjectives = [
     { front: "しんせつな",reading: "",back: "Kind"}, { front: "いじわるな", reading: "", back: "Mean-spirited"},
     { front: "わかい",reading: "",back: "Young"}, { front: "あたまがいい", reading: "", back: "Bright; smart; clever"}
 
+]
+
+export const colorsAdjectives = [
+    {front: "赤", reading: "あか",back: "Red"},
 ]
 
 // ================ NOUN DATA ================================
@@ -221,7 +233,8 @@ export const commonPlaces = [
 export const commonObjects = [
     { front: "じてんしゃ",reading: "",back: "Bicycle"}, { front: "ノート", reading: "", back: "Notebook"},
     { front: "本",reading: "ほん",back: "Book"}, { front: "映画", reading: "えいが", back: "Movie"},
-    { front: "おんがう",reading: "",back: "Music"}, { front: "お金", reading: "おかね", back: "Money"}
+    { front: "おんがう",reading: "",back: "Music"}, { front: "お金", reading: "おかね", back: "Money"},
+    { front: "新聞",reading: "しんぶん",back: "Newspaper"}, {front: "文学", reading: "ぶんがく", back: "Literature"},
 
 ]
 
@@ -264,13 +277,15 @@ export const Body = [
 
 export const Transportation = [
     { front: "さかてつ",reading: "",back: "Subway"}, { front: "ふね", reading: "", back: "Ship; boat"},
-    { front: "ひこうき",reading: "",back: "Airplane"}, { front: "ブス", reading: "", back: "Bus"}
+    { front: "ひこうき",reading: "",back: "Airplane"}, { front: "ブス", reading: "", back: "Bus"},
+    { front: "電車", reading: "でんしゃ",back: "Train"},
 
 ]
 
 export const Abstract = [
     { front: "しょうらい",reading: "",back: "Future (personal, subjective)"}, { front: "ゆめ", reading: "", back: "Dream"},
-    { front: "せいがつ",reading: "",back: "Life; living"}, { front: "たんじょうび", reading: "", back: "Birthday"}
+    { front: "せいがつ",reading: "",back: "Life; living"}, { front: "たんじょうび", reading: "", back: "Birthday"},
+    {front: "病気", reading: "びょうき", back: "Illness"}
 
 ]
 

@@ -56,9 +56,23 @@ function hoverForDetails(data, destination) {
 
 let sentencePatternsPane = document.getElementById("sentence-patterns");
 let structureAnyPane = document.getElementById("structure-any");
+let aSoKoPane = document.getElementById("a-so-ko")
+let somethingAnythingPane = document.getElementById("something-anything");
+let locationWordsPane = document.getElementById("location-words");
+let sentenceEndingPane  = document.getElementById("sentence-ending");
+let sentenceConnectorPane = document.getElementById("sentence-connector");
+let questionWordsPane = document.getElementById("question-words");
+
 
 hoverForDetails(data.sentencePatterns, sentencePatternsPane)
+hoverForDetails(data.aSoKoSeries, aSoKoPane);
+hoverForDetails(data.locationWords, locationWordsPane);
+hoverForDetails(data.somethingAnythingSeries, somethingAnythingPane);
+hoverForDetails(data.structureEnding, sentenceEndingPane);
+hoverForDetails(data.structureConnector, sentenceConnectorPane)
 hoverForDetails(data.structureAny, structureAnyPane )
+hoverForDetails(data.questionWords, questionWordsPane);
+
 
 function accordionManager() {
     const accordionTitles = document.querySelectorAll(".accordionTitle");
