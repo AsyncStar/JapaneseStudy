@@ -24,7 +24,7 @@ body {
     font-family: var(--main-font-family), sans-serif;
 }
 
-#conjugator-container {
+.conjugator-container {
     display: flex;
     gap: 1rem;
 
@@ -85,9 +85,8 @@ ul {
     li {
         display: inline-block;
         border: 1px solid darkgray;
-        &:hover {
-            background-color: #dadada;
-        }
+
+
 
         a {
             text-decoration: none;
@@ -99,4 +98,18 @@ ul {
                 color: gray;            }
         }
     }
+}
+
+.verbs:hover {
+    background-color: blue;
+}
+
+
+.word-list {
+    gap: 2em;
+}
+
+.accordion-tabs__lists {
+
+        visibility: visible;
 }

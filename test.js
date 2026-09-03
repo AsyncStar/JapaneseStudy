@@ -47,7 +47,7 @@ function updateConjugation() {
 
 console.log("test");
 const conjugationRadios = document.querySelectorAll(
-    `#conjugator-container input[type="radio"]`
+    `#verb-conjugator input[type="radio"]`
 );
 
 console.log(conjugationRadios);
