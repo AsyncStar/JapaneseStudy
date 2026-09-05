@@ -121,11 +121,32 @@ ul {
     }
 }
 
-.accordion-tabs__lists {
-
-        visibility: hidden;
-}
 
 .quick-access {
     font-size: var(--quick-access-font-size);
+}
+
+.accordion__title {
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.accordion__title + .accordion__content {
+    display: none;
+}
+
+.accordion__title.is-open + .accordion__content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        flex-wrap: wrap;
+        /*justify-content: flex-end;*/
+        gap: 3em;
+        margin: 0.2em 0.3em;
+        padding: 0.2em;
+        font-size: 0.7em;
+        max-height: max-content;
+        /* border: 1px solid hotpink; */
 }

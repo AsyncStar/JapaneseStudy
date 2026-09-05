@@ -1,4 +1,5 @@
 import * as grammarData from "./grammarData.js";
+import * as data from "./data.js";
 
 // Get selected radio values
 
@@ -103,3 +104,118 @@ const verbConjugationRadios = document.querySelectorAll(
 verbConjugationRadios.forEach(function(radio) {
     radio.addEventListener("change", updateVerbConjugation);
 });
+
+function accordionManager() {
+    const accordionTitle = document.querySelectorAll(".accordion__title")
+
+    accordionTitle.forEach(title => {
+        title.addEventListener("click", (e) => {
+            if (title.classList.contains("is-open")) {
+                title.classList.remove("is-open");
+            } else {
+                const openTitles = document.querySelectorAll(".is-open");
+                openTitles.forEach(title => {
+                    title.classList.remove("is-open");
+                });
+                title.classList.add("is-open");
+            }
+        })
+    })
+}
+
+accordionManager();
+
+
+function createTile(data, destination) {
+    data.forEach(function(el) {
+        const front = el.front;
+        const back = el.back;
+        const reading = el.reading;
+        const tileFront = document.createElement('span');
+
+        tileFront.dataset.back = back;
+        tileFront.dataset.reading = reading;
+        tileFront.classList.add('tile');
+        tileFront.classList.add('jpn');
+
+        tileFront.innerHTML = front;
+
+        destination.appendChild(tileFront);
+
+    })
+}
+
+function onTabClick(event) {
+    let clickedTab = event.target.parentElement;
+    let currentGroup = clickedTab.parentElement.parentElement;
+    let allTabs = currentGroup.querySelectorAll(".tab");
+    const link = clickedTab.querySelector("a");
+    console.log("clickedTab", clickedTab);
+    console.log("Link", link);
+    const paneID = link.getAttribute("href").slice(1);
+    const destination = document.getElementById(paneID);
+
+    allTabs.forEach(function(tab) {
+        tab.classList.remove('active');
+
+        let panel = document.getElementById(tab.querySelector('a').href.split('#')[1]);
+        panel.classList.remove('active');
+    });
+
+    clickedTab.classList.add('active');
+    const dataArray = data[paneID];
+    createTile(dataArray, destination);
+
+    let clickedPanel = document.getElementById(
+        clickedTab.querySelector('a').href.split('#')[1]
+    );
+
+    clickedPanel.classList.add('active');
+}
+
+function openModal(event) {
+    // get tile data
+    const tile = event.target;
+    const tileBack = tile.dataset.back;
+    const tileReading = tile.dataset.reading;
+
+    // get modal destinations
+    const modal = document.getElementById("vocab-modal");
+    const modalClose = document.getElementById("modal-close");
+    const modalFront = document.getElementById("modal-front");
+    const modalReading = document.getElementById("modal-reading");
+    const modalReveal  = document.getElementById("modal-reveal");
+
+    modal.classList.add("jpn");
+
+    modalFront.textContent = tile.textContent;
+    modalReading.innerHTML = tileReading;
+
+    modal.showModal()
+
+    modalClose.addEventListener("click", function() {
+        modal.close()
+    })
+
+    modalReveal.addEventListener("mouseover", function() {
+        modalReveal.textContent = tileBack;
+    })
+
+    modalReveal.addEventListener("mouseleave", function() {
+        modalReveal.textContent = "Hover to reveal meaning";
+    })
+
+}
+
+const tabElements = document.querySelectorAll('.tab');
+
+tabElements.forEach(function(tabElement) {
+    tabElement.addEventListener('click', onTabClick);
+});
+
+
+
+const tileElements = document.querySelectorAll('.tile');
+tileElements.forEach(function(tileElement) {
+    tileElement.addEventListener('click', openModal);
+})
