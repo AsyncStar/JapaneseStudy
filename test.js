@@ -1,6 +1,6 @@
 import * as grammarData from "./grammarData.js";
 
-// ---------- Get selected radio values ----------
+// Get selected radio values
 
 function getSelected(name) {
    const selector = `input[name="${name}"]:checked`;
@@ -13,7 +13,7 @@ function getSelected(name) {
 }
 
 
-// ---------- Find the matching ending ----------
+// Find the matching ending
 
 function findEnding(rules, ending) {
     return rules.find(function(el) {
@@ -21,37 +21,85 @@ function findEnding(rules, ending) {
     });
 }
 
-function updateConjugation() {
+
+function updateVerbConjugation() {
+
+    const voiceModality = getSelected("voiceModality");
+    const kana = getSelected("verbKana");
+    const form = getSelected("form");
 
 
-    const type = getSelected("type");
-    const kana = getSelected("kana");
+    const tense = getSelected("tense");
+    const polarity = getSelected("polarity");
 
+    const otherRadios = document.querySelectorAll('input[name="tense"],' +
+        'input[name="polarity"]');
 
-    let rules;
-
-    if (type === "teForm") {
-        rules = grammarData.verbConjugations.teForm;
+    if (form === "teForm") {
+        otherRadios.forEach((radio) => {
+            radio.disabled = true;
+        })
     } else {
-        const tense = getSelected("tense");
-        const form = getSelected("form");
-        const polarity = getSelected("polarity");
-
-        rules = grammarData.verbConjugations[tense][form][polarity];
+        otherRadios.forEach((radio) => {
+            radio.disabled = false;
+        })
     }
 
-    const match = findEnding(rules, kana);
+    let match;
+    let rules;
 
-    document.getElementById("conjugation-result").innerHTML = match.result;
+    // Handling
+    if (form === "short") {
+         if (polarity === "negative") {
+           rules = grammarData.verbVowelChanges[voiceModality].vowelShift;
+        } else {
+            rules = grammarData.verbVowelChanges[voiceModality].dictionary; }
+    } else if (form === "polite") {
+        rules = grammarData.verbVowelChanges[voiceModality].iRow;
+    } else {
+        rules = grammarData.verbVowelChanges[voiceModality].teForm;
+    }
+
+    // Adding masu conjugations if polite is selected
+    let masuEnding = grammarData.masuEnding[tense][polarity];
+    if (form === "polite") {
+        document.getElementById("ending-result").innerHTML = masuEnding;
+
+    // Short form handled manually because of unique conjugation pattern and to make it compatible for different voices/modalities/moods/ect
+    } else if (form === "short")  {
+        if (tense === "past") {
+            if (polarity === "affirmative") {
+                if (voiceModality === "standard") {
+                    rules = grammarData.shortForm.past.standardAffirmative;
+                    } else {
+                    rules = grammarData.verbVowelChanges.potential.vowelShift;
+                    document.getElementById("ending-result").innerHTML = grammarData.shortForm.past.potentialAffirmative;}
+               }
+            if (polarity === "negative") {
+                document.getElementById("ending-result").innerHTML = grammarData.shortForm.past.negative ;
+            }
+        } else {
+            if (polarity === "affirmative") {
+                document.getElementById("ending-result").innerHTML = grammarData.shortForm.present.affirmative;
+            } else {
+                document.getElementById("ending-result").innerHTML = grammarData.shortForm.present.negative;
+            }
+
+        }
+    } else {
+        document.getElementById("ending-result").innerHTML = "";
+    }
+
+    match = findEnding(rules, kana);
+
+    document.getElementById("kana-result").innerHTML = match.result;
+
 }
-
-console.log("test");
-const conjugationRadios = document.querySelectorAll(
-    `#verb-conjugator input[type="radio"]`
+const verbConjugationRadios = document.querySelectorAll(
+    `#VerbConjugator input[type="radio"]`
 );
 
-console.log(conjugationRadios);
 
-conjugationRadios.forEach(function(radio) {
-    radio.addEventListener("change", updateConjugation);
+verbConjugationRadios.forEach(function(radio) {
+    radio.addEventListener("change", updateVerbConjugation);
 });

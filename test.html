@@ -12,20 +12,18 @@
 <body>
 <div class="nav-bar">
 
-    <ul class="tabs">
-        <li class="tab verbs" data-group="verbs"><a href="#VerbConjugator">Verbs</a></li>
-        <li class="tab" data-group="verbs"><a href="#AdjectiveConjugator">Adjectives</a></li>
-    </ul>
-
-    <div id="VerbConjugator" class="conjugator-container">
+    <div class="conjugator-container flex-row">
+        <h4>Verb Conjugator</h4>
+    <div id="VerbConjugator" class="conjugator-menu　flex-row">
         <div class="conjugator-selectors">
-            <div class="type-selectors stack">
-                <input type="radio" id="standard" name="type" value="standard" checked> <label for="standard">Standard</label>
-                <input type="radio" id="teForm" name="type" value="=teForm"> <label for="teForm">Te-Form</label>
+            <div class="modality-voice-selectors stack">
+                <input type="radio" id="standard" name="voiceModality" value="standard" checked> <label for="standard">Standard</label>
+                <input type="radio" id="potential" name="voiceModality" value="potential"> <label for="potential">Potential</label>
             </div>
             <div class="form-selectors stack">
                 <input type="radio" id="polite" name="form" value="polite" checked> <label for="polite">Polite</label>
                 <input type="radio" id="short" name="form" value="short"> <label for="short">Short</label>
+                <input type="radio" id="teForm" name="form" value="teForm"> <label for="teForm">Te-Form</label>
             </div>
             <div class="tense-selectors stack">
                 <input type="radio" id="present" name="tense" value="present" checked> <label for="present">Present</label>
@@ -47,23 +45,27 @@
             </div>
         </div>
     </div>
-    <div id="AdjectiveConjugator" class="conjugator-container">
 
-        <div class="conjugator-selectors"></div>
-        <div class="kanas-selectors">
-            <div> <input type="radio" id="i-adj" name="adjKana" value="い" checked> <label for="i-adj" class="">い</label> </div>
-            <div> <input type="radio" id="na-adj" name="adjKana" value="な" checked> <label for="na-adj" class="">な</label> </div>
-            <div> <input type="radio" id="ii-adj" name="adjKana" value="いい" checked> <label for="ii-adj" class="">いい</label> </div>
-        </div>
+        <div id="conjugator-result"><span id="kana-result"></span> <span id="ending-result"> </span></div>
 
     </div>
-    <div id="conjugation-result" class="dashed-border"></div>
+
 
 </div>
 <div class="page">
 
     <div class="accordion dashed-border">
-        hi
+        Quick Access
+        <ul class="tabs flex-row quick-access">
+            <li class="tab"><a href="#Function">Function Verbs</a></li>
+            <li class="tab"><a href="#HighFreq">Function Adjectives</a></li>
+            <li class="tab"><a href="#LivingBeings">People Nouns</a></li>
+            <li class="tab"><a href="#CommonPlaces">Common places</a></li>
+            <li class="tab"><a href="#CommonObjects">Everyday objects</a></li>
+            <li class="tab"><a href="#Media">Content / Media</a></li>
+            <li class="tab"><a href="#Technology">Technology</a></li>
+
+        </ul>
 
         </div>
     </div>
@@ -73,14 +75,13 @@
         <div class="accordion">
             <div class="accordion-tabs">
             <ul class="tabs flex-row grammar">
-                <li class="tab"><a href="#Vocabulary">Vocabulary</a></li>
+                <li class="tab"><a href="#Vocabulary">More vocabulary lists</a></li>
             </ul>
 
                 <div id="Vocabulary" class="accordion-content flex-row">
-
+                    <div class="accordion__content">
                 <div class="accordion-tabs__lists">
                     <ul class="tabs">
-                        <li class="tab"><a href="#Function">Function</a></li>
                         <li class="tab"><a href="#Communication">Communication</a></li>
                         <li class="tab"><a href="#Movement">Movement</a></li>
                         <li class="tab"><a href="#DailyRoutine">Daily Routine</a></li>
@@ -92,7 +93,6 @@
                 </div>
                 <div class="accordion-tabs__lists">
                     <ul class="tabs">
-                        <li class="tab"><a href="#HighFreq">High Frequency</a></li>
                         <li class="tab"><a href="#FeelingsAdj">Feelings</a></li>
                         <li class="tab"><a href="#Properties">Properties</a></li>
                         <li class="tab"><a href="#Opinions">Opinions</a></li>
@@ -100,12 +100,9 @@
                 </div>
                 <div class="accordion-tabs__lists">
                     <ul class="tabs">
-                        <li class="tab"><a href="#LivingBeings">People</a></li>
-                        <li class="tab"><a href="#CommonPlaces">Common places</a></li>
-                        <li class="tab"><a href="#CommonObjects">Common objects</a></li>
+                        <li class="tab"><a href="#Animals">Animals</a></li>
                         <li class="tab"><a href="#HouseholdFurniture">Household & furniture</a></li>
                         <li class="tab"><a href="#ClothingAccessories">Clothing & accessories</a></li>
-                        <li class="tab"><a href="#Technology">Technology</a></li>
                         <li class="tab"><a href="#Weather">Weather</a></li>
                         <li class="tab"><a href="#Body">Body</a></li>
                         <li class="tab"><a href="#Transportation">Transportation</a></li>
@@ -125,13 +122,14 @@
 
                     </div>
                     </div>
+                </div>
             </div>
 
             </div>
             <div class="word-list flex-row">
             <div class="word-list__panes flex-col">
                 <div class="tabContent">
-                    <div id="Function" class="tab-pane"></div>
+                    <div id="Function" class="tab-pane">pi</div>
                     <div id="Communication" class="tab-pane "></div>
                     <div id="Movement" class="tab-pane"></div>
                     <div id="DailyRoutine" class="tab-pane"></div>
@@ -145,7 +143,7 @@
 
             <div class="word-list__pane accordion__panes flex-col">
                 <div class="tabContent">
-                    <div id="HighFreq" class="tab-pane"></div>
+                    <div id="HighFreq" class="tab-pane">pi</div>
                     <div id="FeelingsAdj" class="tab-pane"></div>
                     <div id="Properties" class="tab-pane"></div>
                     <div id="Opinions" class="tab-pane"></div>
@@ -155,6 +153,8 @@
             <div class="word-list__pane flex-col">
                 <div class="tabContent">
                     <div id="LivingBeings" class="tab-pane">pi</div>
+                    <div id="Animals" class="tab-pane"></div>
+                    <div id="Media" class="tab-pane"></div>
                     <div id="CommonPlaces" class="tab-pane"></div>
                     <div id="CommonObjects" class="tab-pane"></div>
                     <div id="HouseholdFurniture" class="tab-pane"></div>
@@ -170,7 +170,7 @@
                 </div>
             </div>
 
-                <div class="accordion__panes grammar">
+                <div class="word-list__panes grammar">
                     <div id="sentence-connector" class="tab-pane">phh</div>
                     <div id="sentence-ending" class="tab-pane">p2</div>
                     <div id="sentence-patterns" class="tab-pane">p3</div>
@@ -183,8 +183,6 @@
         </div>
     </div>
 
-
-</div>
 
 
 </body>

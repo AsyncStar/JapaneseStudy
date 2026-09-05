@@ -4,6 +4,12 @@
 
     --main-font-family: Zen Kaku Gothic New, sans-serif;
     --jpn-font-size: 17px;
+
+    --quick-access-font-size: 0.711em;
+    --conjugator-result-font-size: 2.5em;
+
+    --kana-result-font-color: #0002d5;
+    --ending-result-font-color: #c60000;
 }
 
 
@@ -25,7 +31,6 @@ body {
 }
 
 .conjugator-container {
-    display: flex;
     gap: 1rem;
 
     font-size: 0.7em;
@@ -48,12 +53,22 @@ body {
     }
 }
 
-.accordion {
-    display: flex;
-    flex-direction: row-reverse;
+#conjugator-result {
+    font-size: var(--conjugator-result-font-size);
+
+    #kana-result {
+        color: var(--kana-result-font-color);
+    }
+    #ending-result {
+        color: var(--ending-result-font-color);
+    }
+}
+.accordion__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.9em;
+    /*justify-content: flex-end;*/
+    gap: 3em;
     margin: 0.2em 0.3em;
     padding: 0.2em;
     font-size: 0.7em;
@@ -62,18 +77,9 @@ body {
 }
 
 
-.accordion__outer-tabs {
-    gap: 0;
-    flex: 1;
-
-    .tabs {
-        min-width: 150px;
-    }
-}
 
 .accordion__content {
-    flex: 4;
-    max-height: 20%;
+    background-color: rgba(169, 169, 169, 0.11);
 }
 
 ul {
@@ -106,10 +112,20 @@ ul {
 
 
 .word-list {
-    gap: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3em;
+
+    .word-list__panes {
+        border: 1px solid darkgray;
+    }
 }
 
 .accordion-tabs__lists {
 
-        visibility: visible;
+        visibility: hidden;
+}
+
+.quick-access {
+    font-size: var(--quick-access-font-size);
 }
