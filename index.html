@@ -4,13 +4,199 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <script src="index.js" type="module"></script>
 </head>
 <body>
+<div class="nav-bar flex-col">
+    <div class="conjugator-container ">
+        Verb Conjugator
+    <div id="VerbConjugator" class="conjugator-menu　flex-row">
+        <div class="conjugator-selectors">
+            <div class="modality-voice-selectors flex-col">
+                <input type="radio" id="standard" name="voiceModality" value="standard" checked> <label for="standard">Standard</label>
+                <input type="radio" id="potential" name="voiceModality" value="potential"> <label for="potential">Potential</label>
+            </div>
+            <div class="form-selectors flex-col">
+                <input type="radio" id="polite" name="form" value="polite" checked> <label for="polite">Polite</label>
+                <input type="radio" id="short" name="form" value="short"> <label for="short">Short</label>
+                <input type="radio" id="teForm" name="form" value="teForm"> <label for="teForm">Te-Form</label>
+            </div>
+            <div class="tense-selectors flex-col">
+                <input type="radio" id="present" name="tense" value="present" checked> <label for="present">Present</label>
+                <input type="radio" id="past" name="tense" value="past"> <label for="past">Past</label>
+            </div>
+            <div class="polarity-selectors flex-col">
+                <input type="radio" id="affirmative" name="polarity" value="affirmative" checked> <label for="affirmative">Affirmative</label>
+                <input type="radio" id="negative" name="polarity" value="negative"> <label for="negative">Negative</label>
+            </div>
+            <div class="kana-selectors">
+                <div><input type="radio" id="ru-verb" name="verbKana" value="る" checked> <label for="ru-verb" class="">る</label></div>
+                <div><input type="radio" id="mu-verb" name="verbKana" value="む"> <label for="mu-verb" class="">む</label></div>
+                <div><input type="radio" id="ku-verb" name="verbKana" value="く"> <label for="ku-verb" class="">く</label></div>
+                <div><input type="radio" id="gu-verb" name="verbKana" value="ぐ"> <label for="gu-verb" class="">ぐ</label></div>
+                <div><input type="radio" id="bu-verb" name="verbKana" value="ぶ"> <label for="bu-verb" class="">ぶ</label></div>
+                <div><input type="radio" id="nu-verb" name="verbKana" value="ぬ"> <label for="nu-verb" class="">ぬ</label></div>
+                <div><input type="radio" id="u-verb" name="verbKana" value="う"> <label for="u-verb" class="">う</label></div>
+                <div> <input type="radio" id="tsu-verb" name="verbKana" value="つ"> <label for="tsu-verb" class="">つ</label></div>
+            </div>
+            <div id="conjugator__result"><span id="result__kana"></span><span id="result__ending"></span></div>
+        </div>
+    </div>
+    </div>
 
-<h2>私の日本語はのーと</h2>
-<div><a href="index.html">Index</a></div>
-<div><a href="commonWords.html">Common vocabulary</a></div>
-<div><a href="grammar.html">Grammar</a></div>
+    <div id="inspector" class="flex-row jpn">
+        <button  class="item" id="inspector__clear">Clear</button>
+        <div class="flex-col">
+            <div class="flex-row">
+                <span class="item" id="inspector__front"></span>
+                <span class="item" id="inspector__reading"></span>
+            </div>
+            <div class="item" id="inspector__reveal">Hover over a word to inspect!</div>
+        </div>
+    </div>
+
+
+</div>
+<div class="page">
+    <div class="flex-row">
+    <div class="accordion">
+        <div class="accordion__item">
+                <span class="accordion__title">
+                    Notes
+                </span>
+            <div class="accordion__content"></div>
+        </div>
+    </div>
+    </div>
+    <div class="details-box dashed-border flex-row">
+        <div id="notes" class="">
+            <div class="">Header</div>
+            <div class="">Text</div>
+        </div>
+
+    </div>
+
+    <div class=" dashed-border">
+      Quick Access
+        <ul class="tabs flex-row quick-access">
+            <li class="tab" data-group="verbs"><a href="#functionVerbs">Function Verbs</a></li>
+            <li class="tab" data-group="adjectives"><a href="#functionAdjectives">Function Adjectives</a></li>
+            <li class="tab" data-group="nouns"><a href="#people">People Nouns</a></li>
+            <li class="tab" data-group="nouns"><a href="#commonPlaces">Generic Places</a></li>
+            <li class="tab" data-group="nouns"><a href="#popularPlaces">Popular Places</a></li>
+            <li class="tab" data-group="nouns"><a href="#commonObjects">Everyday objects</a></li>
+            <li class="tab" data-group="nouns"><a href="#media">Content / Media</a></li>
+            <li class="tab" data-group="nouns"><a href="#technology">Technology</a></li>
+
+        </ul>
+
+        </div>
+    </div>
+
+    <div class="flex-col dashed-border">
+
+        <div class="accordion">
+            <div class="accordion__item">
+                <span class="accordion__title">
+                    Other vocab lists
+                </span>
+                <div class="accordion__content">
+                    <div class="accordion-tabs__lists"> <ul class="tabs">
+                            <li class="tab" data-group="verbs"><a href="#communicationVerbs">Communication</a></li>
+                            <li class="tab" data-group="verbs"><a href="#movementVerbs">Movement</a></li>
+                            <li class="tab" data-group="verbs"><a href="#dailyRoutineVerbs">Daily Routine</a></li>
+                            <li class="tab" data-group="verbs"><a href="#learningVerbs">Education & Learning</a></li>
+                            <li class="tab" data-group="verbs"><a href="#feelingsVerb">Feelings</a></li>
+                            <li class="tab" data-group="verbs"><a href="#commonActionVerbs">Other Common Actions</a></li>
+                            <li class="tab" data-group="verbs"><a href="#interactionVerbs">Interacting with objects</a></li>
+                        </ul> </div>
+
+                    <div class="accordion-tabs__lists"> <ul class="tabs">
+                            <li class="tab" data-group="adjectives"><a href="#feelingsAdjectives">Feelings</a></li>
+                            <li class="tab" data-group="adjectives"><a href="#propertiesAdjectives">Properties</a></li>
+                            <li class="tab" data-group="adjectives"><a href="#opinionAdjectives">Opinions</a></li>
+                        </ul></div>
+
+                    <div class="accordion-tabs__lists"> <ul class="tabs">
+                            <li class="tab" data-group="nouns"><a href="#animals" >Animals</a></li>
+                            <li class="tab" data-group="nouns"><a href="#householdFurniture">Household & furniture</a></li>
+                            <li class="tab" data-group="nouns"><a href="#clothingAccessories">Clothing & accessories</a></li>
+                            <li class="tab" data-group="nouns"><a href="#weather">Weather</a></li>
+                            <li class="tab" data-group="nouns"><a href="#body">Body</a></li>
+                            <li class="tab" data-group="nouns"><a href="#transportation">Transportation</a></li>
+                            <li class="tab" data-group="nouns"><a href="#abstract">Common Abstract Nouns</a></li>
+                            <li class="tab" data-group="nouns"><a href="#workSchool" >Work & School Related</a></li>
+                            <li class="tab" data-group="nouns"><a href="#activities">Activities</a></li>
+                        </ul> </div>
+
+                    <div class="accordion-tabs__lists"> <ul class="tabs">
+                            <li class="tab" data-group="grammar"><a href="#questionWords">Question Words</a></li>
+                            <li class="tab" data-group="grammar"><a href="#aSoKoSeries">あそこ Series</a></li>
+                            <li class="tab" data-group="grammar"><a href="#somethingAnything">Something / anything</a></li>
+                            <li class="tab" data-group="grammar"><a href="#locationWords">Location words</a></li>
+                        </ul> </div>
+                </div>
+            </div>
+        </div>
+
+
+            </div>
+            <div class="word-list flex-row">
+            <div class="word-list__panes flex-col">
+                <div class="tabContent">
+                    <div id="functionVerbs" class="tab-pane"></div>
+                    <div id="communicationVerbs" class="tab-pane "></div>
+                    <div id="movementVerbs" class="tab-pane"></div>
+                    <div id="dailyRoutineVerbs" class="tab-pane"></div>
+                    <div id="learningVerbs" class="tab-pane"></div>
+                    <div id="feelingsVerb" class="tab-pane"></div>
+                    <div id="commonActionVerbs" class="tab-pane"></div>
+                    <div id="interactionVerbs" class="tab-pane"></div>
+                </div>
+
+            </div>
+
+            <div class="word-list__pane accordion__panes flex-col">
+                <div class="tabContent">
+                    <div id="functionAdjectives" class="tab-pane"></div>
+                    <div id="feelingsAdjectives" class="tab-pane"></div>
+                    <div id="propertiesAdjectives" class="tab-pane"></div>
+                    <div id="opinionAdjectives" class="tab-pane"></div>
+                </div>
+            </div>
+
+            <div class="word-list__pane flex-col">
+                <div class="tabContent">
+                    <div id="people" class="tab-pane">pi</div>
+                    <div id="animals" class="tab-pane"></div>
+                    <div id="media" class="tab-pane"></div>
+                    <div id="commonPlaces" class="tab-pane"></div>
+                    <div id="popularPlaces" class="tab-pane"></div>
+                    <div id="commonObjects" class="tab-pane"></div>
+                    <div id="householdFurniture" class="tab-pane"></div>
+                    <div id="clothingAccessories" class="tab-pane"></div>
+                    <div id="technology" class="tab-pane"></div>
+                    <div id="weather" class="tab-pane"></div>
+                    <div id="body" class="tab-pane"></div>
+                    <div id="transportation" class="tab-pane"></div>
+                    <div id="abstract" class="tab-pane"></div>
+                    <div id="workSchool" class="tab-pane"></div>
+                    <div id="activities" class="tab-pane"></div>
+
+                </div>
+            </div>
+
+                <div class="word-list__panes grammar">
+                    <div id="questionWords" class="tab-pane">p5</div>
+                    <div id="aSoKoSeries" class="tab-pane">p6</div>
+                    <div id="somethingAnything" class="tab-pane">p7</div>
+                    <div id="locationWords" class="tab-pane">p8</div>
+                </div>
+        </div>
+
 
 </body>
 </html>
