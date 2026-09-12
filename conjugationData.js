@@ -90,7 +90,7 @@ export const masuEnding = {
 }
 
 
-    export const adjConjugations = {
+export const adjConjugations = {
 
     adjectives: {
         present: {

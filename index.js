@@ -1,5 +1,5 @@
-import * as grammarData from "./grammarData.js";
-import * as data from "./data.js";
+import * as conjugationData from "./conjugationData.js";
+import * as data from "./vocabData.js";
 
 // Get selected radio values for conjugator
 
@@ -52,17 +52,17 @@ function updateVerbConjugation() {
     // Handling
     if (form === "short") {
          if (polarity === "negative") {
-           rules = grammarData.verbVowelChanges[voiceModality].vowelShift;
+           rules = conjugationData.verbVowelChanges[voiceModality].vowelShift;
         } else {
-            rules = grammarData.verbVowelChanges[voiceModality].dictionary; }
+            rules = conjugationData.verbVowelChanges[voiceModality].dictionary; }
     } else if (form === "polite") {
-        rules = grammarData.verbVowelChanges[voiceModality].iRow;
+        rules = conjugationData.verbVowelChanges[voiceModality].iRow;
     } else {
-        rules = grammarData.verbVowelChanges[voiceModality].teForm;
+        rules = conjugationData.verbVowelChanges[voiceModality].teForm;
     }
 
     // Adding masu conjugations if polite is selected
-    let masuEnding = grammarData.masuEnding[tense][polarity];
+    let masuEnding = conjugationData.masuEnding[tense][polarity];
     if (form === "polite") {
         document.getElementById("result__ending").innerHTML = masuEnding;
 
@@ -71,19 +71,19 @@ function updateVerbConjugation() {
         if (tense === "past") {
             if (polarity === "affirmative") {
                 if (voiceModality === "standard") {
-                    rules = grammarData.shortForm.past.standardAffirmative;
+                    rules = conjugationData.shortForm.past.standardAffirmative;
                     } else {
-                    rules = grammarData.verbVowelChanges.potential.vowelShift;
-                    document.getElementById("result__ending").innerHTML = grammarData.shortForm.past.potentialAffirmative;}
+                    rules = conjugationData.verbVowelChanges.potential.vowelShift;
+                    document.getElementById("result__ending").innerHTML = conjugationData.shortForm.past.potentialAffirmative;}
                }
             if (polarity === "negative") {
-                document.getElementById("result__ending").innerHTML = grammarData.shortForm.past.negative ;
+                document.getElementById("result__ending").innerHTML = conjugationData.shortForm.past.negative ;
             }
         } else {
             if (polarity === "affirmative") {
-                document.getElementById("result__ending").innerHTML = grammarData.shortForm.present.affirmative;
+                document.getElementById("result__ending").innerHTML = conjugationData.shortForm.present.affirmative;
             } else {
-                document.getElementById("result__ending").innerHTML = grammarData.shortForm.present.negative;
+                document.getElementById("result__ending").innerHTML = conjugationData.shortForm.present.negative;
             }
 
         }
@@ -105,65 +105,21 @@ verbConjugationRadios.forEach(function(radio) {
 });
 updateVerbConjugation();
 
-function accordionManager() {
-    const accordionTitle = document.querySelectorAll(".accordion__title")
+function triggerDrawer() {
 
-    accordionTitle.forEach(title => {
-        title.addEventListener("click", (e) => {
-            if (title.classList.contains("is-open")) {
-                title.classList.remove("is-open");
-            } else {
-                const openTitles = document.querySelectorAll(".is-open");
-                openTitles.forEach(title => {
-                    title.classList.remove("is-open");
-                });
-                title.classList.add("is-open");
-            }
+
+    const drawerWrappers = document.querySelectorAll(".drawer__wrapper");
+    drawerWrappers.forEach(wrapper => {
+        const trigger = wrapper.querySelector(".drawer__trigger");
+        trigger.addEventListener("click", (event) => {
+            wrapper.classList.toggle("open");
         })
     })
-}
-accordionManager();
-
-function openModal(event) {
-    // get tile and data
-    const triggerTile = event.target.parentElement;
-    const tile = event.target;
-    const tileBack = tile.dataset.back;
-    const tileReading = tile.dataset.reading;
-
-    // get modal destinations
-    const inspectorClear = document.getElementById("inspector__clear");
-    const inspectorFront = document.getElementById("inspector__front");
-    const inspectorReading = document.getElementById("inspector__reading");
-    const inspectorReveal  = document.getElementById("inspector__reveal");
-
-
-    // Hover to open tile modal
-    triggerTile.addEventListener(`mouseover`, ()=> {
-        inspectorFront.textContent = tile.textContent;
-        inspectorReading.innerHTML = tileReading;
-        inspectorReveal.textContent = "Reveal meaning?";
-    });
-
-
-    inspectorClear.addEventListener(`click`, ()=> {
-        inspectorFront.textContent = "";
-        inspectorReading.innerHTML = "";
-        inspectorReveal.textContent = "Hover over a word to inspect!";
-    })
-
-
-    // Hover to reveal reading
-    inspectorReveal.addEventListener("mouseover", function() {
-        inspectorReveal.textContent = tileBack;
-    })
-
-    inspectorReveal.addEventListener("mouseleave", function() {
-        inspectorReveal.textContent = "Reveal meaning?";
-    })
-
 
 }
+
+triggerDrawer();
+
 
 function createTile(data, destination) {
     data.forEach(function(el) {
@@ -175,7 +131,6 @@ function createTile(data, destination) {
         tileFront.dataset.back = back;
         tileFront.dataset.reading = reading;
         tileFront.classList.add('tile');
-        tileFront.classList.add('jpn');
 
         tileFront.innerHTML = front;
 
@@ -186,6 +141,14 @@ function createTile(data, destination) {
 
 // Tab
 function onTabClick(event) {
+    console.log(document.querySelector("#conjugator-section").getBoundingClientRect());
+    // Close tab drawer on click
+    const tabSection = event.target.closest(".tab__section");
+    const drawer = tabSection.querySelector(".drawer__wrapper.open");
+    if (drawer) {
+        drawer.classList.toggle("open");
+    }
+
     let clickedTab = event.target.parentElement;
     const group = clickedTab.dataset.group;
     let allTabs = document.querySelectorAll(`.tab[data-group="${group}"]`);
@@ -197,7 +160,7 @@ function onTabClick(event) {
        const oldPaneID = tab.querySelector("a").getAttribute("href").slice(1);
        const oldPane = document.getElementById(oldPaneID);
        oldPane.classList.remove('active');
-       oldPane.innerHTMl = "";
+       oldPane.innerHTML = "";
 
     });
     // Get clicked tabs pane
@@ -213,18 +176,12 @@ function onTabClick(event) {
 
 
     // Attaching modal event listener
-    const tileElements = document.querySelectorAll('.tile');
-    tileElements.forEach(function(tileElement) {
-        tileElement.addEventListener("mouseover", openModal);
-    })
 
     destination.classList.add('active');
 
-    const openAccordion =
-        document.querySelector(".accordion__title.is-open");
-    if (openAccordion) {
-        openAccordion.classList.remove('is-open');
-    }
+
+
+    console.log(document.querySelector("#conjugator-section").getBoundingClientRect());
 }
 
 const tabElements = document.querySelectorAll('.tab');

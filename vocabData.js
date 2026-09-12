@@ -90,15 +90,47 @@ export const timeCounters = [
 ]
 
 
-export const time = [
-    { front: "日曜日", reading: "にちようび", back: "", genki: "1"},  { front: "月曜日", reading: "げつようび", back: "", genki: "1"},
-    { front: "毎日", reading: "まいにち", back: "", genki: "1"},  { front: "今", reading: "いま", back: "", genki: "1"},
-    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
-    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
-    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
-    { front: "", reading: "", back: "", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
+// ==================== TIME DATA ============================
+
+export const relativeNowTimeNouns = [
+{ front: "今", reading: "いま", back: "now", genki: "1"},  { front: "", reading: "", back: "", genki: "1"},
+
 ]
 
+export const timesOfDayTimeNouns = [
+    { front: "昼", reading: "ひる", back: "Noon; daytime", lesson: "K13"},
+
+]
+export const dayTimeNouns = [
+    { front: "おととい", reading: "", back: "The day before last", genki: "4"},
+    { front: "今日", reading: "きょう", back: "Today", genki: "4"},  { front: "昨日", reading: "きのう", back: "Yesterday", genki: "4"},
+    { front: "明日", reading: "あした", back: "Tomorrow", genki: "4"},  { front: "あさって", reading: "", back: "The day after tomorrow", genki: "4"},
+]
+
+export const weekDayTimeNouns = [
+    { front: "日曜日", reading: "にちようび", back: "Sunday", genki: "4"},  { front: "月曜日", reading: "げつようび", back: "Monday", genki: "4"},
+    { front: "火曜日", reading: "かようび", back: "Tuesday", genki: "4"},  { front: "水曜日", reading: "すいようび", back: "Wednesday", genki: "4"},
+    { front: "木曜日", reading: "もくようび", back: "Thursday", genki: "4"},  { front: "金曜日", reading: "きんようび", back: "Friday", genki: "4"},
+    { front: "土曜日", reading: "どうよび", back: "Saturday", genki: "4"},  { front: "", reading: "", back: "", genki: "1"},
+]
+
+export const weekTimeNouns = [
+    { front: "今週", reading: "こんしゅう", back: "This week", genki: "1"},  { front: "来週", reading: "らいしゅう", back: "Next week", genki: "1"},
+    { front: "先週", reading: "せんしゅう", back: "Last week", genki: "1"},  { front: "二週間前", reading: "にしゅうかんまえ", back: "Two weeks ago", genki: "1"},
+    { front: "さ来週", reading: "さらいしゅう", back: "The week after next", genki: "1"},
+]
+
+export const monthTimeNouns = [
+    { front: "今月", reading: "こんげつ", back: "This month", genki: "4"},  { front: "来月", reading: "らいげつ", back: "Next month", genki: "4"},
+    { front: "二か月前", reading: "にかげつまえ", back: "2 months ago", genki: "4"},  { front: "先月", reading: "せんげつ", back: "Last month", genki: "4"},
+    { front: "さ来月", reading: "さらいげつ", back: "The month after next", genki: "4"},  { front: "", reading: "", back: "", genki: "1"},
+]
+
+export const yearTimeNouns = [
+    { front: "今年", reading: "ことし", back: "This year", genki: "4"},  { front: "きょ年", reading: "きょねん", back: "Last year", genki: "4"},
+    { front: "来年", reading: "らいねん", back: "Next year year", genki: "4"},  { front: "おととし", reading: "", back: "The year before last", genki: "4"},
+    { front: "さ来年", reading: "さらいねん", back: "The year after next", genki: "4"}
+]
 
 
 // ================ VERB DATA ====================
@@ -121,20 +153,33 @@ export const movementVerbs = [
     { front: "行く", reading: "いく", back: "To go"}, { front: "帰る", reading: "かえる", back: "To go back"}, { front: "出かける", reading: "でかける", back: "To go out"},
     { front: "ある", reading: "", back: "To walk"},　{ front: "はしる", reading: "", back: "To run"}, { front: "はいる", reading: "", back: "To enter"},
     { front: "出る", reading: "でる", back: "To exit"}, { front: "のる", reading: "", back: "To ride; board"},　{ front: "すわる", reading: "", back: "To sit down"},
-    { front: "立つ", reading: "たつ", back: "To stand up"}, { front: "起きる", reading: "おきる", back: "To get up"}, { front: "おりる", reading: "", back: "To get off"}
+    { front: "立つ", reading: "たつ", back: "To stand up"}, { front: "おりる", reading: "", back: "To get off"}
 ]
 
 export const dailyRoutineVerbs = [
     { front: "住む", reading: "すむ", back: "To live"}, { front: "働く", reading: "はたらく", back: "To work"},
-    { front: "そうじする", reading: "", back: "To clean"}, { front: "シャワーおあびる", reading: "", back: "To take a shower"},
-    { front: "おふろいはいる", reading: "", back: "To take a bathe"}, { front: "あらう", reading: "", back: "To wash"},
-    { front: "せんたくする", reading: "", back: "To do laundry"}, { front: "おそくなる", reading: "", back: "To be late"},
-    { front: "ねる", reading: "", back: "To sleep"}, { front: "かぶる", reading: "",back: "To put on (hat/headpiece)"},
-    { front: "はく",reading: "", back: "To put on (items below waist)"}, { front: "めがねをかける", reading: "",back: "To put on (glasses)"},
-    { front: "きる", back: "To put on (clothes above your waist)"}, { front: "食べる", reading: "た・べる", back: "To eat"},
+   { front: "おそくなる", reading: "", back: "To be late"},
+    { front: "ねる", reading: "", back: "To sleep"}, { front: "起きる", reading: "おきる", back: "To get up"},  { front: "食べる", reading: "た・べる", back: "To eat"},
     { front: "飲む", reading: "のむ", back: "To drink"}, { front: "くすりをのむ", reading: "",back: "To take medicine"},
     { front: "おなかがすく", reading: "",back: "To become hungry"}, { front: "のどがかわく", reading: "",back: "To become thirsty"},
     { front: "りょうりする",reading: "", back: "To cook"}
+]
+
+export const gettingDressedVerbs = [
+    { front: "かぶる", reading: "",back: "To put on (hat/headpiece)"},
+    { front: "はく",reading: "", back: "To put on (items below waist)"}, { front: "めがねをかける", reading: "",back: "To put on (glasses)"},
+    { front: "着る", reading: "きる", back: "To put on (clothes above your waist)"},
+]
+
+export const cleaningVerbs = [
+    { front: "そうじする", reading: "", back: "To clean"}, { front: "シャワーおあびる", reading: "", back: "To take a shower"},
+    { front: "おふろいはいる", reading: "", back: "To take a bathe"}, { front: "あらう", reading: "", back: "To wash"},
+    { front: "せんたくする", reading: "", back: "To do laundry"},
+
+]
+
+export const healthVerbs = [
+    {front: "気分が悪い", reading: "きんぶんがわるい", back: "To feel sick", lesson: ""},
 ]
 
 export const learningVerbs = [
@@ -170,7 +215,7 @@ export const interactionVerbs = [
 // ================= ADJECTIVES =================
 
 export const functionAdjectives = [
-    { front: "いい",reading: "",back: "Good"}, { front: "わるい", reading: "", back: "Bad"},
+    { front: "いい",reading: "",back: "Good"}, { front: "悪い", reading: "わるい", back: "Bad"},
     { front: "かんたんな",reading: "",back: "Easy; simple"}, { front: "むずかしい", reading: "", back: "Difficult"},
     { front: "はやい",reading: "",back: "Fast"}, { front: "おそい", reading: "", back: "Slow; late"},
     { front: "あまい",reading: "",back: "Sweet"}, { front: "すてきな", reading: "", back: "Nice"},
@@ -192,7 +237,7 @@ export const propertiesAdjectives = [
     { front: "つめたい",reading: "",back: "Cold (things; personality)"}, { front: "あたらし", reading: "", back: "New"},
     { front: "古い",reading: "ふるい",back: "Old (thing)"}, { front: "大", reading: "おおきい", back: "Large"},
     { front: "小さい",reading: "ちいさい",back: "Small"}, { front: "せまい", reading: "", back: "Narrow; not spacious"},
-    { front: "ひろい",reading: "",back: "Wide; spacious"}, { front: "やすい", reading: "", back: "Inexpensive; cheap (thing)"},
+    { front: "ひろい",reading: "",back: "Wide; spacious"}, { front: "安い", reading: "やすい", back: "Inexpensive; cheap (thing)"},
     { front: "高い",reading: "たかい",back: "Expensive; high"}, { front: "いそがしい", reading: "", back: "Busy (people/day)"},
     { front: "ひま",reading: "",back: "Not busy; free (time)"}
 ]
@@ -215,12 +260,37 @@ export const colorsAdjectives = [
 export const people = [
     { front: "自分",reading: "じぶん",back: "Oneself; myself"}, { front: "男の人", reading: "おとこのひと", back: "Man"},
     { front: "女の人",reading: "おんなのひと",back: "Woman"},
-    { front: "人",reading: "ひと",back: "Person"}, { front: "子供", reading: "こども", back: "Child"}
+    { front: "人",reading: "ひと",back: "Person"}, { front: "子供", reading: "こども", back: "Child"},
+    { front: "大人", reading: "おとな", back: "Adult", lesson: "13"},
 ]
 
-export const animals = [
-    { front: "いめ", reading: "", back: "Dog"},  { front: "いめ", reading: "", back: "Dog"},
 
+export const food = [
+    { front: "たまご", reading: "", back: "Eggs", lesson: "12"},  { front: "おかし", reading: "", back: "Sweets", lesson: "11"},
+    { front: "ケーキ", reading: "", back: "Cake", lesson: "10"},  { front: "すし", reading: "", back: "Sushi", lesson: "10"},
+    { front: "天ぷら", reading: "てんぷら", back: "Tempura", lesson: "10"},  { front: "ピザ", reading: "", back: "Pizza", lesson: "9"},
+    { front: "じやかいも", reading: "Potatoes", back: "", lesson: "8"},  { front: "たまねぎ", reading: "", back: "Onion", lesson: "8"},
+    { front: "人人", reading: "にんじん", back: "Carrots", lesson: "8"},  { front: "トマト", reading: "", back: "Tomato", lesson: "8"},
+    { front: "肉", reading: "にく", back: "Meat", lesson: "13"},  { front: "牛肉", reading: "ぎゅうにく", back: "Beef", lesson: "N/A"},
+    { front: "", reading: "", back: "", lesson: "13"},  { front: "", reading: "", back: "", lesson: "13"},
+    { front: "", reading: "", back: "", lesson: "13"},  { front: "", reading: "", back: "", lesson: "13"},
+]
+
+export const drinks = [
+{ front: "ジューズ", reading: "", back: "Juice", lesson: "12"},  { front: "ベール", reading: "", back: "Beer", lesson: "11"},
+{ front: "牛にゅう", reading: "ぎゅうにゅう", back: "Milk", lesson: "10"},
+    ]
+
+export const animals = [
+    { front: "いめ", reading: "", back: "Dog", lesson: ""},  { front: "ねこ", reading: "", back: "Cat", lesson: ""},
+    { front: "鳥", reading: "とり", back: "Bird; poultry", lesson: "K13"}, { front: "白鳥", reading: "はくちょう", back: "Swan", lesson: "K13"},
+    { front: "", reading: "", back: "", lesson: "13"},
+
+]
+
+export const nature = [
+    { front: "海", reading: "うみ", back: "Sea", lesson: ""}, { front: "", reading: "", back: "", lesson: ""},
+    { front: "", reading: "", back: "", lesson: ""}, { front: "", reading: "", back: "", lesson: ""},
 ]
 
 export const commonPlaces = [
@@ -241,9 +311,8 @@ export const popularPlaces = [
 
 export const commonObjects = [
     { front: "じてんしゃ",reading: "",back: "Bicycle"}, { front: "ノート", reading: "", back: "Notebook"},
-    { front: "本",reading: "ほん",back: "Book"}, { front: "映画", reading: "えいが", back: "Movie"},
-    { front: "おんがう",reading: "",back: "Music"}, { front: "お金", reading: "おかね", back: "Money"},
-    { front: "新聞",reading: "しんぶん",back: "Newspaper"}, {front: "文学", reading: "ぶんがく", back: "Literature"},
+    { front: "本",reading: "ほん",back: "Book"},  { front: "お金", reading: "おかね", back: "Money"},
+    { front: "新聞",reading: "しんぶん",back: "Newspaper"},
 
 ]
 
@@ -258,7 +327,8 @@ export const clothingAccessories = [
     { front: "ジーンス",reading: "",back: "Jeans"}, { front: "さいふ", reading: "", back: "Wallet"},
     { front: "くつ",reading: "",back: "Shoes"}, { front: "かばん", reading: "", back: "Bag"},
     { front: "かさ",reading: "",back: "Umbrella"}, { front: "ぼうし", reading: "", back: "Hat"},
-    { front: "めがね",reading: "",back: "Glasses"}
+    { front: "めがね",reading: "",back: "Glasses"}, {front: "着物", reading: "きもの", back: "Kimono", lesson: ""},
+    {front: "水着", reading: "みずぎ", back: "Swimwear", lesson: ""},
 ]
 
 export const technology = [
@@ -266,6 +336,12 @@ export const technology = [
     { front: "テレビ",reading: "",back: "TV"}, { front: "とけい", reading: "", back: "Watch; clock"},
     { front: "アイコン",reading: "",back: "Air conditioner"}, { front: "電気", reading: "でんき", back: "Light; electricity"},
     { front: "メール",reading: "",back: "Email"}
+]
+
+export const media = [
+    { front: "映画", reading: "えいが", back: "Movie"}, {front: "アニメ", reading: "", back: "Anime", lesson: ""},
+    { front: "おんがう",reading: "",back: "Music"}, {front: "文学", reading: "ぶんがく", back: "Literature"},
+
 ]
 
 export const weather = [
@@ -281,7 +357,8 @@ export const body = [
     { front: "かお",reading: "",back: "Face"}, { front: "くち", reading: "", back: "Mouth"},
     { front: "め",reading: "",back: "Eye"}, { front: "おなか", reading: "", back: "Stomach"},
     { front: "あし",reading: "",back: "Leg; foot"}, { front: "のど", reading: "", back: "Throat"},
-    { front: "は",reading: "",back: "Tooth"}, { front: "かみ", reading: "", back: "Face"}
+    { front: "は",reading: "",back: "Tooth"}, { front: "かみ", reading: "", back: "Face"},
+    { front: "体", reading: "からだ", back: "Body", lesson: ""},
 ]
 
 export const transportation = [
@@ -304,7 +381,7 @@ export const workSchool = [
 ]
 
 export const activities = [
-    { front: "ゲーム",reading: "",back: "Game"}, { front: "かいもの", reading: "", back: "Shopping"},
-    { front: "あさごはん",reading: "",back: "Breakfast"}, { front: "ひろごはん", reading: "", back: "Lunch"},
-    { front: "ばんごはん",reading: "",back: "Dinner"}
+    { front: "ゲーム",reading: "",back: "Game", lesson: ""}, { front: "買い物", reading: "買い物", back: "Shopping", lesson: ""},
+    { front: "朝ご飯",reading: "あさごはん",back: "Breakfast", lesson: ""}, { front: "昼ご飯", reading: "ひるごはん", back: "Lunch", lesson: ""},
+    { front: "ばんごはん",reading: "晩ご飯",back: "Dinner", lesson: ""},
 ]
