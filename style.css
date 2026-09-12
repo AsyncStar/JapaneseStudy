@@ -5,7 +5,10 @@
     --main-font-family: Zen Kaku Gothic New, sans-serif;
     --jpn-font-size: 18px;
 
-    --quick-access-font-size: 0.711em;
+    --tile-font-size-mobile: 0.94em;
+    --tile-font-size-desktop: 1.2em;
+
+    --quick-access-font-size: 0.9em;
     --conjugator-result-font-size: 40px;
     --inspector-font-size: 1.5em;
     --reading-font-size: 0.7em;
@@ -51,10 +54,8 @@
 .tile {
     display: inline-block;
     text-align: center;
-    font-size: var(--jpn-font-size);
     border: 0.02em solid rgba(37, 37, 37, 0.2);
     border-radius: 0.3em;
-    width: max-content;
     padding: 0.09em;
     margin: 0.02em;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -124,15 +125,21 @@ body {
     }
 
     #time-section {
+        display: flex;
         flex: 0.1;
+    }
+
+
+    #time-carousel {
+        flex: 0.8;
+    }
+
+    #time-menu {
+        flex: 0.2;
     }
 
     #grammar-section {
         flex: 0.4;
-    }
-
-    #time-carousel_1, #time-carousel_2 {
-        width: 100%;
     }
 
     #vocab-section {
@@ -145,6 +152,10 @@ body {
 
     #quick-access {
         height: 50px;
+    }
+
+    .tile {
+        font-size: var(--tile-font-size-mobile);
     }
 
 
@@ -177,21 +188,32 @@ body {
 
     #time-section {
         display: flex;
-        flex: 0.1;
+        flex: 0.2;
     }
     #grammar-section {
         flex: 0.9;
     }
 
-    #time-carousel_1, #time-carousel_2 {
+    #time-carousel {
+        display: flex;
+        flex: 0.8;
         width: 50%;
+        height: 10%;
     }
 
+
     #vocab-section {
+        margin-top: 0;
         height: 400px;
         flex: 2;
         min-height: 0;
 
+    }
+
+    .tile {
+        text-wrap: nowrap !important;
+        font-size: var(--tile-font-size-desktop);
+        width: max-content;
     }
 
 }
