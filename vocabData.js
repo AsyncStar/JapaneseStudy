@@ -234,7 +234,7 @@ export const feelingAdjectives = [
 export const propertiesAdjectives = [
     { front: "あつい",reading: "",back: "Hot (weather; thing)"}, { front: "さむい", reading: "", back: "Cold (weather)"},
     { front: "すずしい",reading: "",back: "Cool (weather)"}, { front: "あたたかしい", reading: "もつ", back: "Warm"},
-    { front: "つめたい",reading: "",back: "Cold (things; personality)"}, { front: "あたらし", reading: "", back: "New"},
+    { front: "つめたい",reading: "",back: "Cold (things; personality)"}, { front: "新", reading: "あたらし", back: "New"},
     { front: "古い",reading: "ふるい",back: "Old (thing)"}, { front: "大", reading: "おおきい", back: "Large"},
     { front: "小さい",reading: "ちいさい",back: "Small"}, { front: "せまい", reading: "", back: "Narrow; not spacious"},
     { front: "ひろい",reading: "",back: "Wide; spacious"}, { front: "安い", reading: "やすい", back: "Inexpensive; cheap (thing)"},
