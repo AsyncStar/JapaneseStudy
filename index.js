@@ -154,13 +154,23 @@ function openModal(event) {
     const modalReading = document.getElementById("modal-reading");
     const modalReveal  = document.getElementById("modal-reveal");
 
+    if (modalReveal.textContent !== "Click to reveal meaning") {
+        modalReveal.textContent = "Click to reveal meaning";
+    }
     modalFront.textContent = tile.textContent;
     modalReading.innerHTML = tileReading;
 
     modal.showModal()
 
-    modal.addEventListener("click", (event) => {
+    modalReveal.addEventListener("click", function() {
+        modalReveal.textContent = tileBack;
 
+        setTimeout(() => {
+            modalReveal.textContent = "Click to reveal meaning";
+        }, 5000);
+    })
+
+    modal.addEventListener("click", (event) => {
         if (event.target === modal) {
             const rect = modal.getBoundingClientRect()
 
@@ -175,9 +185,7 @@ function openModal(event) {
         }
     });
 
-    modalReveal.addEventListener("click", function() {
-        modalReveal.textContent = tileBack;
-    })
+
 
 }
 // Tab
