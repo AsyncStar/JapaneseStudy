@@ -139,6 +139,47 @@ function createTile(data, destination) {
     })
 }
 
+
+// Modal
+
+function openModal(event) {
+    // get tile data
+    const tile = event.target;
+    const tileBack = tile.dataset.back;
+    const tileReading = tile.dataset.reading;
+
+    // get modal destinations
+    const modal = document.getElementById("vocab-modal");
+    const modalFront = document.getElementById("modal-front");
+    const modalReading = document.getElementById("modal-reading");
+    const modalReveal  = document.getElementById("modal-reveal");
+
+    modalFront.textContent = tile.textContent;
+    modalReading.innerHTML = tileReading;
+
+    modal.showModal()
+
+    modal.addEventListener("click", (event) => {
+
+        if (event.target === modal) {
+            const rect = modal.getBoundingClientRect()
+
+            const isOutside = (
+                event.clientX < rect.left || event.clientX > rect.right ||
+                event.clientY < rect.top || event.clientY > rect.bottom
+            );
+
+            if (isOutside) {
+                modal.close()
+            }
+        }
+    });
+
+    modalReveal.addEventListener("click", function() {
+        modalReveal.textContent = tileBack;
+    })
+
+}
 // Tab
 function onTabClick(event) {
     console.log(document.querySelector("#conjugator-section").getBoundingClientRect());
@@ -178,6 +219,10 @@ function onTabClick(event) {
     // Attaching modal event listener
 
     destination.classList.add('active');
+    const tileElements = document.querySelectorAll(".tile");
+    tileElements.forEach(function(tileElement) {
+        tileElement.addEventListener("click", (openModal));
+    });
 
 
 
@@ -189,6 +234,3 @@ const tabElements = document.querySelectorAll('.tab');
 tabElements.forEach(function(tabElement) {
     tabElement.addEventListener('click', onTabClick);
 });
-
-// Modal
-
