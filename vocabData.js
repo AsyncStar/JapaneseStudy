@@ -114,6 +114,10 @@ export const weekDayTimeNouns = [
     { front: "土曜日", reading: "どうよび", back: "Saturday", genki: "4"},  { front: "", reading: "", back: "", genki: "1"},
 ]
 
+export const monthDayTimeNouns = [
+
+]
+
 export const weekTimeNouns = [
     { front: "今週", reading: "こんしゅう", back: "This week", genki: "1"},  { front: "来週", reading: "らいしゅう", back: "Next week", genki: "1"},
     { front: "先週", reading: "せんしゅう", back: "Last week", genki: "1"},  { front: "二週間前", reading: "にしゅうかんまえ", back: "Two weeks ago", genki: "1"},

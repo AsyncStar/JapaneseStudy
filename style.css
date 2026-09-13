@@ -95,13 +95,18 @@ body {
 
 }
 
-#page-wrapper {
+#main-page-wrapper {
     min-height: 100dvh;
     height: 100%;
     width: 600px;
     gap: 0.5em;
     font-family: var(--main-font-family), sans-serif;
     overflow: clip;
+    display: none;
+}
+
+#time-page-wrapper {
+    min-height: 100dvh;
 }
 
 
@@ -214,6 +219,21 @@ body {
         text-wrap: nowrap !important;
         font-size: var(--tile-font-size-desktop);
         width: max-content;
+    }
+
+    /* Time page */
+
+    #time-page-wrapper .content-wrapper {
+
+    }
+
+    #weekDayTimeNouns {
+
+
+        .tile {
+            text-orientation: upright;
+            writing-mode: vertical-rl;
+        }
     }
 
 }
