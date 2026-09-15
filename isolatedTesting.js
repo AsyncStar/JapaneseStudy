@@ -18,6 +18,17 @@ function createTile(data, destination) {
     })
 }
 
+function createTileSingle(data, destination) {
+    const front = data.front;
+    const back = data.back;
+    const reading = data.reading;
+    const tileFront = document.createElement('span');
+    tileFront.dataset.back = back;
+    tileFront.dataset.reading = reading;
+    tileFront.classList.add('tile');
+    tileFront.innerHTML = front;
+    destination.appendChild(tileFront);
+}
 function renderSelectedValue(elem, destination) {
     const activeButton = elem.querySelector('.segment.active');
     const selectedValue = activeButton.dataset.value;
@@ -27,8 +38,8 @@ function renderSelectedValue(elem, destination) {
 }
 
 
-function segmentedControl() {
-    const control = document.querySelectorAll('.segmented-control');
+function segmentedControlTile() {
+    const control = document.querySelectorAll('.segmented-control-tile');
 
     control.forEach((elem) => {
         const destination = elem.nextElementSibling
@@ -49,13 +60,45 @@ function segmentedControl() {
             const valueArray = data[selectedValue];
             createTile(valueArray, destination);
         });
+    })
+}
 
+function segmentedControlSection() {
+    const control = document.querySelectorAll('.segmented-control-section');
+
+    control.forEach((elem) => {
+        const parent = elem.parentElement;
+        const destinations = parent.querySelectorAll('.destination-option');
+
+        elem.addEventListener('click', e => {
+            const button = e.target.closest('.segment');
+            if (!button) return;
+
+            elem.querySelectorAll('.segment').forEach(seg => {
+                seg.classList.remove('active');
+            })
+
+            button.classList.add('active');
+            const targetButton = elem.querySelector('.segment.active');
+            const targetValue = targetButton.dataset.value;
+
+            destinations.forEach(dest => {
+                if (dest.dataset.value === targetValue) {
+                    dest.classList.add('active');
+                } else {
+                    dest.classList.remove('active');
+                }
+            })
+
+
+        })
     })
 
 
 }
 
-segmentedControl();
+segmentedControlTile();
+segmentedControlSection();
 
 function selectorPrevNext() {
     const selector = document.querySelectorAll('.selector');
@@ -99,13 +142,75 @@ function selectorPrevNext() {
 selectorPrevNext();
 
 
-/* need to do data ughh
-function numberInputStepper() {
+function renderSelectedNumber(value, destination) {
+    const inputtedNumber = value.getAttribute('value');
+    const currentNumber = inputtedNumber - 1;
+    const valueParent = value.parentElement.parentElement;
+    /*console.log(valueParent);*/
+    const valueArray = data[valueParent.dataset.value];
+    /*console.log('Array: ', valueArray);*/
+    const arrayPosition = valueArray[currentNumber];
+    /*console.log(arrayPosition);*/
+    createTileSingle(arrayPosition, destination);
+
+}
+function numberInputter() {
     const numberInput = document.querySelectorAll('.number-input');
+
     numberInput.forEach((elem) => {
-        elem.querySelector('.number-input').addEventListener('input', e => {
+
+        const numberSelector = elem.parentElement.parentElement;
+        const min = numberSelector.dataset.min;
+        const max = numberSelector.dataset.max;
+        /*console.log(numberSelector);*/
+        const valueArray = data[numberSelector.dataset.value];
+        /*console.log('Array: ', valueArray);*/
+        const destination = numberSelector.querySelector('.destination');
+        /*console.log(destination);*/
+        renderSelectedNumber(elem, destination);
+
+        const minusBtn = numberSelector.querySelector('.btn-minus');
+       /* console.log(minusBtn);*/
+        const plusBtn = numberSelector.querySelector('.btn-plus');
+        /*console.log(elem)*/
+
+
+        elem.addEventListener('input', e => {
+            const inputtedNumber = elem.valueAsNumber;
+           /* console.log('Input: ', inputtedNumber);*/
+            const currentNumber = inputtedNumber - 1;
+            const arrayPosition = valueArray[currentNumber];
+            destination.innerHTML = "";
+            createTileSingle(arrayPosition, destination);
+        })
+
+        minusBtn.addEventListener('click', e => {
+            console.log("Minus btn event fired")
+            if (elem.valueAsNumber > min) {
+                elem.valueAsNumber--;
+                const inputtedNumber = elem.valueAsNumber;
+                const currentNumber = inputtedNumber - 1;
+                const arrayPosition = valueArray[currentNumber];
+                destination.innerHTML = "";
+                createTileSingle(arrayPosition, destination);
+
+            }
+        })
+
+        plusBtn.addEventListener('click', e => {
+            if (elem.valueAsNumber < max) {
+                elem.valueAsNumber++;
+                const inputtedNumber = elem.valueAsNumber;
+                const currentNumber = inputtedNumber - 1;
+                const arrayPosition = valueArray[currentNumber];
+                destination.innerHTML = "";
+                createTileSingle(arrayPosition, destination);
+
+
+            }
 
         })
     })
+
 }
- */
+numberInputter();

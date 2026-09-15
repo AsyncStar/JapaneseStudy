@@ -10,41 +10,121 @@
 </head>
 <body>
 
-<div id="temporalDeixis">
-  <div class="segmented-control">
-    <button type="button" class="segment active" data-value="weekTemporalDeixis">Week</button>
-    <button type="button" class="segment" data-value="monthTemporalDeixis">Month</button>
-    <button type="button" class="segment" data-value="yearTemporalDeixis">Year</button>
-  </div>
-  <div class="destination"></div>
+<div id="conjugator">
+    <div class="conjugator-selectors">
+
+
+    <div class="selector">
+        <button class="btn-prev"><</button>
+        <div class="options-container">
+            <div class="selectee active" data-value="Standard">Standard</div>
+            <div class="selectee" data-value="Potential">Potential</div>
+        </div>
+        <button class="btn-next">></button>
+    </div>
+
+    <div class="selector">
+        <button class="btn-prev"><</button>
+        <div class="options-container">
+            <div class="selectee active" data-value="Polite">Polite</div>
+            <div class="selectee" data-value="Short">Short</div>
+            <div class="selectee" data-value="TeForm">Te-Form</div>
+        </div>
+        <button class="btn-next">></button>
+    </div>
+
+    <div class="selector">
+        <button class="btn-prev"><</button>
+        <div class="options-container">
+            <div class="selectee active" data-value="Affirmative">Affirmative</div>
+            <div class="selectee" data-value="Negative">Negative</div>
+        </div>
+        <button class="btn-next">></button>
+    </div>
+
+    <div class="selector">
+        <button class="btn-prev"><</button>
+        <div class="options-container">
+            <div class="selectee active" data-value="Present">Present</div>
+            <div class="selectee" data-value="Potential">Past</div>
+        </div>
+        <button class="btn-next">></button>
+    </div>
+    </div>
+
+    <div class="kana-selectors">
+       Test
+    </div>
 </div>
 
-<div class="selector">
-  <button class="btn-prev"><</button>
-  <div class="options-container">
-      <div class="selectee active" data-value="Standard">Standard</div>
-      <div class="selectee" data-value="Potential">Potential</div>
-  </div>
-  <button class="btn-next">></button>
+<div id="time-section" class="container">
+
+
+    <div id="temporalDeixis">
+        <div class="segmented-control-tile">
+            <button type="button" class="segment active" data-value="weekTemporalDeixis">Week</button>
+            <button type="button" class="segment" data-value="monthTemporalDeixis">Month</button>
+            <button type="button" class="segment" data-value="yearTemporalDeixis">Year</button>
+        </div>
+        <div class="destination"></div>
+    </div>
+
+    <div id="time-counters" class="nested-segmented-control">
+        <div class="segmented-control-section">
+            <button type="button" class="segment active" data-value="1">Months</button>
+            <button type="button" class="segment" data-value="2">Weekdays</button>
+            <button type="button" class="segment" data-value="3">Month days</button>
+            <button type="button" class="segment" data-value="4">Hours</button>
+            <button type="button" class="segment" data-value="5">Minutes</button>
+        </div>
+
+        <div class="destination-option " id="months" data-value="1">
+            <div class="number-selector"
+                 data-min="1"
+                 data-max="12"
+                 data-value="months">
+                <button class="btn-minus">-</button>
+                <label>
+                    <input class="number-input" type="number" value="1">
+                </label>
+                <button class="btn-plus">+</button>
+                <div class="destination"></div>
+
+            </div>
+        </div>
+
+        <div class="destination-option active" id="daysOfTheWeek" data-value="2">
+            <div class="number-selector"
+                 data-min="1"
+                 data-max="7"
+                 data-value="daysOfTheWeek">
+                <button class="btn-minus">-</button>
+                <label>
+                    <input class="number-input" type="number" value="1">
+                </label>
+                <button class="btn-plus">+</button>
+                <div class="destination"></div>
+            </div>
+        </div>
+
+        <div class="destination-option" id="daysOfTheMonth" data-value="3">
+            <div class="number-selector"
+                 data-min="1"
+                 data-max="31"
+                 data-value="daysOfTheMonth">
+                <button class="btn-minus">-</button>
+                <label>
+                    <input class="number-input" type="number" value="1">
+                </label>
+                <button class="btn-plus">+</button>
+                <div class="destination"></div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
-<div id="daysOfMonth">
-  <div class="number-selector"
-       data-min="1"
-       data-max="31">
-
-    <button class="btn-minus">−</button>
-
-    <label>
-      <input class="number-input" type="number" value="1">
-    </label>
-
-    <button class="btn-plus">+</button>
-
-    <div class="destination"></div>
-  </div>
-
-</div>
 
 
 </body>
