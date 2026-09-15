@@ -8,10 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <script src="tileGeneration.js" type="module"></script>
 </head>
 <body>
 
-<div id="page-wrapper" class="flex-col">
+<div id="main-page-wrapper" class="flex-col">
     <div id="time-section" class="border">
         <div id="time-carousel" class="border">
           Test
@@ -40,6 +41,28 @@
         <div class="inner__panes">nouns</div>
         <div class="inner__panes">adjectives</div>
     </div>
+</div>
+
+<div id="time-page-wrapper" class="page-wrapper flex-col">
+    <div class="page-switcher">Switch</div>
+    <div class="content-wrapper flex-col">
+        <div class="flex-col">
+            <div class="flex-row"> <span class="title">Times of Day</span> <div id="timesOfDayTimeNouns">Times of day</div> </div>
+            <div class="flex-row"> <span class="title">Days of the Week</span>
+                <div id="weekDayTimeNouns" class="flex-row holds-tiles">
+
+            </div></div>
+        </div>
+        <div class="flex-row">
+            <div id="monthDayTimeNouns">Days of month</div>
+            <div id="months" class="flex-col">months</div>
+        </div>
+        <div id="dayTimeNouns" class="holds-tiles">Day</div>
+        <div id="weekTimeNouns">Week</div>
+        <div id="monthTimeNouns">Month</div>
+        <div id="yearTimeNouns"></div>
+    </div>
+
 </div>
 
 </body>

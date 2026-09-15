@@ -1,54 +1,54 @@
 
-export const structureAny = [
-    { front: "を", back:"Object "},  { front: "が", back:"Subject; emphasis"},
-    { front: "で", back:"1) By means of... 2) Direction "},  { front: "に", back:"1) Location 2) Time (can also be here)"},
-    { front: "へ", back:"Direction"},  { front: "と", back:"Co-participant"},
-    { front: "まで", back:"End-point"},  { front: "から", back:"Origin"},
+export const particles = [
+    { front: "を", back:"Object ",  reading: ""},  { front: "が", back:"Subject; emphasis",  reading: ""},
+    { front: "で", back:"1) By means of... 2) Direction "},  { front: "に", back:"1) Location 2) Time (can also be here)",  reading: ""},
+    { front: "へ", back:"Direction",  reading: ""},  { front: "と", back:"Co-participant",  reading: ""},
+    { front: "まで", back:"End-point",  reading: ""},  { front: "から", back:"Origin",  reading: ""},
 
 ]
 
-export const structureConnector = [
-    { front: "〜たり、たり", back: "I did this and that (examples)" , guide:  "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)" },
-    { front: "て、ます", back: "I did this and that (exclusively)", guide: "...(Verbて)、(Verb end)" },
-    { front: "でも", back: "Or; But", guide: "Place at beginning of following sentence" },
-    { front: "〜が、", back: "But", guide: "" },
-    { front: "から・ので", back: "", guide: "" },
-    { front: "たから", back: "", guide: "" },
-    { front: "そして", back: "", guide: "" },
-    { front: "それに", back: "", guide: "" },
+export const sentenceConnector = [
+    { front: "〜たり、たり", back: "I did this and that (examples)" , reading:  "(verb short,past)り、(verb short, past)り (する or other helper verb to end or connect clause)。" },
+    { front: "(て)、(ます)", back: "I did this and that (exclusively)", reading: "...(Verbて)、(Verb end)。" },
+    { front: "でも", back: "Or; But", reading: "Place at beginning of following sentence." },
+    { front: "〜が、", back: "But", reading: "" },
+    { front: "から・ので", back: "Because", reading: "(reason) short + から・ので、(because). " },
+    { front: "だから", back: "So; Therefore", reading: "Place at beginning of following sentence." },
+    { front: "そして", back: "And", reading: "Place at beginning of following sentence." },
+    { front: "それに", back: "In addition; moreover", reading: "Place at beginning of following sentence." },
 ]
 
-export const structureEnding = [
-    { front: "んです", back: "Explanation", guide: "" },
-    { front: "でしょう（か）", back: "Probably / guessing", guide: "" },
-    { front: "ましょう（か）", back: "Let's... / Let me do...", guide: "" },
-    { front: "てもいいです（か）", back: "You may do / May I?", guide: "" },
-    { front: "てください", back: "Please do...", guide: "" },
-    { front: "ないでください", back: "Please don't...", guide: "" },
-    { front: "つもりです", back: "Intend to do", guide: "" },
-    { front: "つもりでした", back: "Intend not to do", guide: "" },
-    { front: "ことがある", back: "Did / Happened earlier", guide: "" },
-    { front: "たい", back: "Want", guide: "" },
-    { front: "すぎる", back: "Too much/excess", guide: "(adj stem/verb masu stem) すぎる" },
-    { front: "だはうがいいです", back: "It's better to do...", guide: "" },
-    { front: "ないはういです", back: "It's better not to do...", guide: "" },
-    { front: "なけれはいけません", back: "You must", guide: "" },
-    { front: "なきゃけません", back: "You must (polite)", guide: "" },
-    { front: "ている", back: "(verb) in progress or result of (verb) change", guide: "" },
-    { front: "てだった", back: "Have not... yet", guide: "" },
+export const sentenceEndings = [
+    { front: "んです", back: "Explanation", reading: "" },
+    { front: "でしょう（か）", back: "Probably / guessing", reading: "" },
+    { front: "ましょう（か）", back: "Let's... / Let me do...", reading: "" },
+    { front: "てもいいです（か）", back: "You may do / May I?", reading: "" },
+    { front: "てください", back: "Please do...", reading: "" },
+    { front: "ないでください", back: "Please don't...", reading: "" },
+    { front: "つもりです", back: "Intend to do", reading: "" },
+    { front: "つもりでした", back: "Intend not to do", reading: "" },
+    { front: "ことがある", back: "Did / Happened earlier", reading: "" },
+    { front: "たい", back: "Want", reading: "" },
+    { front: "すぎる", back: "Too much/excess", reading: "(adj stem/verb masu stem) すぎる" },
+    { front: "だはうがいいです", back: "It's better to do...", reading: "" },
+    { front: "ないはういです", back: "It's better not to do...", reading: "" },
+    { front: "なけれはいけません", back: "You must", reading: "" },
+    { front: "なきゃけません", back: "You must (polite)", reading: "" },
+    { front: "ている", back: "(verb) in progress or result of (verb) change", reading: "" },
+    { front: "てだった", back: "Have not... yet", reading: "" },
 ]
 
 export const sentencePatterns = [
-    { front: "Where things are", back: "Xは(location word)のです" },
-    { front: "Describing appearance", back: "Aさんは(body part)が(adjective)" },
-    { front: "Contrasting like & dislike", back: "(Object)はlike/dislikeが(object)は..."},
+    { front: "Where things are", reading: "Xは(location word)のです" },
+    { front: "Describing appearance", reading: "Aさんは(body part)が(adjective)" },
+    { front: "Contrasting like & dislike", reading: "(Object)はlike/dislikeが(object)は..."},
     { front: "Neutral (like nor dislike)", back: "好きでもきらいないです"},
-    { front: "I like doing... / I'm good at doing...", back: "(Verb short dictionary)のが(好き/上手)です。" },
-    { front: "Counting people", back: "PlaceにはがX人(じん)います。"},
-    { front: "To become...", back: "(Adverbial adjective)/(noun)なる"}, { front: "Counting", back: "(Item) (Number)(Counter)"},
-    { front: "Adjective adverbial form", back: "な-adj replace　な with に |い-adj swap い with く"},
-    { front: "Adjective noun modification", back: "(な-adj keep な) (noun) |(い-adj dictionary) (noun)"},
-    { front: "Adjective verb modification", back: "(Adverbial adjective) (verb)"}
+    { front: "I like doing... / I'm good at doing...", reading: "(Verb short dictionary)のが(好き/上手)です。" },
+    { front: "Counting people", reading: "PlaceにはがX人(じん)います。"},
+    { front: "To become...", reading: "(Adverbial adjective)/(noun)なる"}, { front: "Counting", reading: "(Item) (Number)(Counter)"},
+    { front: "Adjective adverbial form", reading: "な-adj replace　な with に |い-adj swap い with く"},
+    { front: "Adjective noun modification", reading: "(な-adj keep な) (noun) |(い-adj dictionary) (noun)"},
+    { front: "Adjective verb modification", reading: "(Adverbial adjective) (verb)"}
 ]
 
 
@@ -112,6 +112,10 @@ export const weekDayTimeNouns = [
     { front: "火曜日", reading: "かようび", back: "Tuesday", genki: "4"},  { front: "水曜日", reading: "すいようび", back: "Wednesday", genki: "4"},
     { front: "木曜日", reading: "もくようび", back: "Thursday", genki: "4"},  { front: "金曜日", reading: "きんようび", back: "Friday", genki: "4"},
     { front: "土曜日", reading: "どうよび", back: "Saturday", genki: "4"},  { front: "", reading: "", back: "", genki: "1"},
+]
+
+export const monthDayTimeNouns = [
+
 ]
 
 export const weekTimeNouns = [
