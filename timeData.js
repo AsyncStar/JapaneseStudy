@@ -3,7 +3,7 @@ export const timesOfDayTimeNouns = [
 
 ]
 
-export const dayTimeNouns = [
+export const dayTemporalDeixis = [
     { front: "おととい", reading: "", back: "The day before last", genki: "4"},
     { front: "今日", reading: "きょう", back: "Today", genki: "4"},  { front: "昨日", reading: "きのう", back: "Yesterday", genki: "4"},
     { front: "明日", reading: "あした", back: "Tomorrow", genki: "4"},  { front: "あさって", reading: "", back: "The day after tomorrow", genki: "4"},

@@ -102,12 +102,8 @@ body {
     gap: 0.5em;
     font-family: var(--main-font-family), sans-serif;
     overflow: clip;
-    display: none;
 }
 
-#time-page-wrapper {
-    min-height: 100dvh;
-}
 
 
 @media (max-width: 600px) {

@@ -1,0 +1,20 @@
+
+export const sentenceEndings = [
+    { front: "んです", back: "Explanation", reading: "" },
+    { front: "でしょう（か）", back: "Probably / guessing", reading: "" },
+    { front: "ましょう（か）", back: "Let's... / Let me do...", reading: "" },
+    { front: "てもいいです（か）", back: "You may do / May I?", reading: "" },
+    { front: "てください", back: "Please do...", reading: "" },
+    { front: "ないでください", back: "Please don't...", reading: "" },
+    { front: "つもりです", back: "Intend to do", reading: "" },
+    { front: "つもりでした", back: "Intend not to do", reading: "" },
+    { front: "ことがある", back: "Did / Happened earlier", reading: "" },
+    { front: "たい", back: "Want", reading: "" },
+    { front: "すぎる", back: "Too much/excess", reading: "(adj stem/verb masu stem) すぎる" },
+    { front: "だはうがいいです", back: "It's better to do...", reading: "" },
+    { front: "ないはういです", back: "It's better not to do...", reading: "" },
+    { front: "なけれはいけません", back: "You must", reading: "" },
+    { front: "なきゃけません", back: "You must (polite)", reading: "" },
+    { front: "ている", back: "(verb) in progress or result of (verb) change", reading: "" },
+    { front: "てだった", back: "Have not... yet", reading: "" },
+]

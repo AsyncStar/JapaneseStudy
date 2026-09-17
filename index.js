@@ -1,4 +1,4 @@
-import * as conjugationData from "./conjugationData.js";
+import * as conjugationData from "./conjugationDataOLD.js";
 import * as data from "./vocabData.js";
 
 // Get selected radio values for conjugator

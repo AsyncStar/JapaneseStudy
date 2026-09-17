@@ -34,6 +34,17 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+
+.vertical-text {
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
 /* ================ COMPONENTS =============== */
 
 .tile {
@@ -52,6 +63,7 @@ input::-webkit-inner-spin-button {
     background-color: #fecc64;
     padding: 4px;
     border-radius: 0.5em;
+    text-wrap: nowrap;
 }
 
 .segment {
@@ -75,8 +87,6 @@ input::-webkit-inner-spin-button {
         display: inline-block;
     }
 
-.nested-segmented-control {}
-
 .destination-option {
         display: none;
     }
@@ -89,30 +99,24 @@ input::-webkit-inner-spin-button {
 
 .selector {
     display: inline-block;
-    background-color: #fffbe6;
     padding: 4px;
     border-radius: 0.5em;
 }
 
 .options-container {
     display: inline-block;
-
 }
 
 .selectee {
         display: none;
-        background-color: transparent;
-        padding: 2px;
-        font-size: 11px;
-        font-weight: 800;
-        color: #7a5636;
 }
 
 .selectee.active {
         display: inline-block;
+
     }
 
-.selector button {
+.selector .btn-next, .btn-prev {
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -169,113 +173,40 @@ input::-webkit-inner-spin-button {
         background-color: #fecc64;
 }
 
+/**/
+.cycler {
+    display: inline-block;
+    border: 1px solid transparent;
+    background-color: #fecc64;
+    border-radius: 0.5em;
+    width: fit-content;
+    padding: 0.3em;
+
+}
+.cycler:hover {
+    background-color: #84bcff;
+}
+.cycle {
+    display: none;
+}
+.cycle.active {
+    display: inline-block;
+}
+
+.cycler-component .destination {
+    display: inline-block;
+}
+
 /* ============== SECTION SPECIFIC COMPONENT STYLING ============ */
 
 @media (max-width: 600px) {
 
 
-    #time-section {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6em;
 
-        border: 1px solid #fecc64;
-        width: 100%;
-    }
-
-        #temporalDeixis .destination {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 50%;
-
-        .tile {
-            text-wrap: nowrap;
-            font-size: 1.522em;
-        }
-    }
-
-    #temporalDeixis .segmented-control-tile {
-        width: 100%;
-
-    }
-
-    #time-counters .destination {
-
-        .tile {
-            font-size: 1.352em;
-        }
-    }
-
-    #conjugator {
-        .conjugator-selectors {
-            display: flex;
-
-            flex-wrap: wrap;
-
-        }
-
-        .conjugator-selectors .selector {
-            width: max-content;
-        }
-    }
 }
 
 @media (min-width: 601px) {
 
-    #time-section {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6em;
-
-        border: 1px solid #fecc64;
-        width: 60%;
-    }
-
-    #temporalDeixis .destination {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 50%;
-
-        .tile {
-            text-wrap: nowrap;
-            font-size: 1.522em;
-        }
-    }
-
-    #temporalDeixis .segmented-control-tile {
-        width: 100%;
-
-    }
-
-    #time-counters {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #time-counters .destination {
-
-        .tile {
-            font-size: 1.352em;
-        }
-
-    }
-
-    #conjugator {
-        .conjugator-selectors {
-            display: flex;
-
-            flex-wrap: wrap;
-
-        }
-
-        .conjugator-selectors .selector {
-            width: max-content;
-        }
-    }
-
 }
-
 
 /**/
