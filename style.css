@@ -16,10 +16,10 @@
     --light-neutral-color: #fffbf2;
     --dark-neutral-color: #7a5636;
     --mid-neutral-color: #f4ae08;
-    --primary-color: #fecc64;
+    --primary-color: #ffd071;
     --secondary-color: #b5d8ff;
 
-    --primary-accent-color: #feb164;
+    --primary-accent-color: rgba(255, 183, 111, 0.94);
     --secondary-accent-color: #84bcff;
 
 }
@@ -240,7 +240,7 @@ input::-webkit-inner-spin-button {
         height: 35%;
     }
 
-    @media (min-width: 601px) {
+    @media (min-width: 801px) {
         width: 50%;
         height: 40%;
     }
@@ -279,7 +279,8 @@ input::-webkit-inner-spin-button {
         gap: 0.9em;
     }
 
-    @media (min-width: 601px) {
+    @media (min-width: 801px) {
+        gap: 1em;
 
     }
 
@@ -303,7 +304,15 @@ input::-webkit-inner-spin-button {
 
             }
 
-            @media (min-width: 601px) {
+            @media (min-width: 1000px) {
+                min-height: 70px;
+                height: 100%;
+                max-height: 44px;
+
+                min-width: 300px;
+                width: 100%;
+                max-width: 300px;
+
 
             }
 
@@ -311,8 +320,9 @@ input::-webkit-inner-spin-button {
 
         .mixed-dest-container {
             overflow: scroll;
+
             @media (max-width: 600px) {
-                border: 1px solid black;
+
                 min-height: 75px;
                 height: 100%;
                 max-height: 75px;
@@ -329,7 +339,21 @@ input::-webkit-inner-spin-button {
 
             }
 
-            @media (min-width: 601px) {
+            @media (min-width: 1000px) {
+
+                min-height: 155px;
+                height: 100%;
+                max-height: 75px;
+
+                min-width: 300px;
+                width: 100%;
+                max-width: 300px;
+
+                .tile {
+                    font-size: 1.32em;
+                    margin: 0.2em;
+                }
+
 
             }
 
@@ -353,18 +377,18 @@ input::-webkit-inner-spin-button {
         gap: 0.8em;
     }
 
-    @media (min-width: 601px) {
+    @media (min-width: 1000px) {
         display: flex;
         flex-direction: row;
         gap: 0.5em;
     }
 
     .destination {
-       border-bottom: 0.2em solid rgba(254, 204, 100, 0.33);
-
         overflow: scroll;
 
         @media (max-width: 600px) {
+            border-bottom: 0.2em solid rgba(254, 204, 100, 0.33);
+
             min-height: 100px;
             max-height: 100px;
 
@@ -376,11 +400,11 @@ input::-webkit-inner-spin-button {
 
         }
 
-        @media (min-width: 601px) {
-            min-height: 200px;
-            max-height: 200px;
-            min-width: 200px;
-            max-width: 200px;
+        @media (min-width: 1000px) {
+            min-height: 500px;
+            max-height: 500px;
+            min-width: 230px;
+            max-width: 230px;
 
             .tile {
                 text-wrap: nowrap;
@@ -426,5 +450,21 @@ input::-webkit-inner-spin-button {
 
 /* ============== SECTION SPECIFIC COMPONENT STYLING ============ */
 
+@media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+    display: flex;
+}
+
+@media (min-width: 1000px) {
+
+    body {
+        display: flex;
+    }
+}
 
 /**/
