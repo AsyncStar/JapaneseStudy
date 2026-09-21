@@ -66,14 +66,19 @@ input::-webkit-inner-spin-button {
     padding: 4px;
     border-radius: 0.5em;
     text-wrap: nowrap;
-    height: 50px;
+    height: 40px;
 }
 
+.segmented-control-kana {
+    .segment {
+    font-size: 16px;
+    }
+}
 .segment {
         background: transparent;
         border: none;
         padding: 10px 10px;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 500;
         color: #fff9f4;
         cursor: pointer;
@@ -183,7 +188,7 @@ input::-webkit-inner-spin-button {
     background-color: #fecc64;
     border-radius: 0.5em;
     width: fit-content;
-    height: 40px;
+    height: 35px;
     padding: 0.3em;
     justify-content: center;
     align-items: center;
@@ -235,7 +240,7 @@ input::-webkit-inner-spin-button {
     overflow: hidden;
     border: none;
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         width: 80%;
         height: 35%;
     }
@@ -275,7 +280,7 @@ input::-webkit-inner-spin-button {
 .mixed-container {
     display: flex;
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         gap: 0.9em;
     }
 
@@ -292,7 +297,7 @@ input::-webkit-inner-spin-button {
 
             overflow: scroll;
 
-            @media (max-width: 600px) {
+            @media (max-width: 700px) {
 
                 min-height: 44px;
                 height: 100%;
@@ -321,7 +326,7 @@ input::-webkit-inner-spin-button {
         .mixed-dest-container {
             overflow: scroll;
 
-            @media (max-width: 600px) {
+            @media (max-width: 700px) {
 
                 min-height: 75px;
                 height: 100%;
@@ -371,9 +376,9 @@ input::-webkit-inner-spin-button {
 
 .tab-section .container {
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.8em;
     }
 
@@ -386,11 +391,15 @@ input::-webkit-inner-spin-button {
     .destination {
         overflow: scroll;
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             border-bottom: 0.2em solid rgba(254, 204, 100, 0.33);
 
-            min-height: 100px;
+            min-height: 150px;
             max-height: 100px;
+            min-width: 110px;
+            max-width: 50px;
+            display: flex;
+            flex-direction: column;
 
             .tile {
                 text-wrap: nowrap;
@@ -424,11 +433,16 @@ input::-webkit-inner-spin-button {
     flex-wrap: wrap;
     background-color: var(--primary-color);
     border-radius: 0.5em;
+    @media (max-width: 700px) {
+        height: 70px;
+        overflow-y: scroll;
+    }
 
     li {
         display: inline-block;
         height: 40px;
         margin: 0.18em;
+        font-size: 12px;
 
 
         text-decoration: none;
@@ -454,10 +468,15 @@ input::-webkit-inner-spin-button {
     display: flex;
     flex-direction: column;
 
+
 }
 
 @media (min-width: 601px) and (max-width: 999px) {
     display: flex;
+
+    .quick-access  {
+        font-size: 20px;
+    }
 }
 
 @media (min-width: 1000px) {
